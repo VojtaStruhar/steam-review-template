@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import Category from './Category';
+
 
 function App() {
   return (
@@ -10,7 +12,7 @@ function App() {
       </header>
 
       <body>
-        <p>Body WIP :D</p>
+        <Category/>
       </body>
 
       <footer className="App-footer">

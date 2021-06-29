@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Category from './Category';
 
@@ -11,9 +10,9 @@ function App() {
         <p className="App-header">☑ Awesome</p>
       </header>
 
-      <body>
+      <div>
         <Category/>
-      </body>
+      </div>
 
       <footer className="App-footer">
         <p>Vojtěch Struhár, 2021</p>

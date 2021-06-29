@@ -2,7 +2,30 @@ p.inner {
     background-color: tomato;
 };
 
-.section {
+div.section {
+    text-align: left;
+    align-items: left;
+    color: violet;
     background-color:wheat;
+    border-style: solid;
+    border-radius: 8px;
+    border-color: aqua;
+    border-width: 2px;
 };
 
+.rectangle {
+    text-align: center;
+    align-items: center;
+    display: block;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background: black;
+  }
+
+  .centered {
+    height: 10vh; /* Magic here */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

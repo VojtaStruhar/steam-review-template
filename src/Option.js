@@ -1,5 +1,5 @@
 import './Option.css';
-import React, { useState } from 'react';
+import React from 'react';
 import { Checkbox, FormControlLabel } from '@material-ui/core';
 
 

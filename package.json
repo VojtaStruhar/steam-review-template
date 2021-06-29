@@ -2,7 +2,7 @@
   "name": "steam-review",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://VojtaStruhar.github.io/steam-review-template",
+  "homepage": "https://VojtaStruhar.github.io/steam-review-template",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",

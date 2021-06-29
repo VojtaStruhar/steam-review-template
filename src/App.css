@@ -13,6 +13,8 @@
   }
 }
 
+/* header */
+
 .App-header {
   background-color: #282c34;
   min-height: 8vh;
@@ -34,7 +36,21 @@ p.App-header {
   min-height: auto;
   margin-top: 4px;
   margin-bottom: 4px;
+  font-size: calc(5px + 2vmin);
 }
+/* footer */
+.App-footer {
+  background-color: #1e2127;
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(3px + 1vmin);
+  color: white;
+}
+
+/* other */
 
 .App-link {
   color: #61dafb;

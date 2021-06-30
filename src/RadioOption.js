@@ -1,6 +1,6 @@
 import './Option.css';
-import React, { useState } from 'react';
-import { FormControlLabel, Radio, FormLabel, RadioGroup, FormControl } from '@material-ui/core';
+import React from 'react';
+import { FormControlLabel, Radio, RadioGroup} from '@material-ui/core';
 import { useWindowWidth } from '@react-hook/window-size'
 
 

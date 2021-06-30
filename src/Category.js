@@ -49,7 +49,7 @@ export default function Categories(props) {
                     localReviewString += "\n"
                 });
             } else {
-                localReviewString += "ERROR - bad category type (should be 'radio' or 'check')\n"
+                localReviewString += "ERROR - bad category type. (radio | check)\n"
             }
             localReviewString += "\n"
         }

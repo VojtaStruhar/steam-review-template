@@ -3,7 +3,7 @@ import React from 'react';
 import { Checkbox, FormControlLabel } from '@material-ui/core';
 
 
-export default class Option extends React.Component {
+export default class CheckboxOption extends React.Component {
 
     constructor(props) {
         super(props);

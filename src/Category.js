@@ -32,15 +32,19 @@ export default function Categories(props) {
 
             reviewString = reviewString + "---{ " + categoryJson.title + " }---\n"
 
-            categoryJson.options.forEach(option => {
-                // With radio, only one option is selected
-                if (categoryJson.type === "radio") {
+
+            // With radio, only one option is selected
+            if (categoryJson.type === "radio") {
+                categoryJson.options.forEach(option => {
                     reviewString += ((component.props.props.selectedState === option ? "☑ " : "☐ ") + option)
-                } else if (categoryJson.type === "check") {
-                    
-                }
-                reviewString += "\n"
-            });
+                    reviewString += "\n"
+                });
+            } else if (categoryJson.type === "check") {
+                console.log(component.props)
+                console.log("category", component.props.props.get_selected())
+            }
+            
+
             reviewString += "\n"
         }
         console.log(reviewString)

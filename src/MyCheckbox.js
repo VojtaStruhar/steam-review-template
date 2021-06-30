@@ -2,35 +2,23 @@ import './Option.css';
 import React, { Component, useState } from 'react';
 import { Checkbox, FormControlLabel } from '@material-ui/core';
 
-export default class MyCheckbox extends Component {
+export default function MyCheckbox(props) {
+    const [isChecked, setIsChecked] = useState(false)
 
-    constructor(props) {
-        super(props)
-        this.toggle = this.toggle.bind(this)
-
-        console.log("eeej", props)
-
-        this.state = {
-            title: props.title,
-            index: props.index
-        };
+    const toggle = () => {
+        props.props.isOn = !isChecked;
+        setIsChecked(!isChecked)
+        console.log("toggle", props.props.isOn)
     }
 
-    toggle() {
-        this.isChecked = !this.isChecked
-    }
-
-    render() {
-
-        return (
-            <FormControlLabel
-                value={ this.state.index }
-                control={<Checkbox color="primary"
-                    onClick={ this.toggle } />}
-                label={ this.state.title }
-                labelPlacement="end"
-                checked={ this.isChecked }
-            />
-        );
-    };
+    return (
+        <FormControlLabel
+            value={props.props.index}
+            control={<Checkbox color="primary"
+                onClick={ toggle } />}
+            label={props.props.title}
+            labelPlacement="end"
+            checked={isChecked}
+        />
+    );
 }

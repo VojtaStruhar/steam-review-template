@@ -1,6 +1,7 @@
 div.radio-container {
     margin: auto;
-    width: 40%;
+    /* Width manually overriden depending on window width */
+    width: 40%; 
     display: flex;
     align-items: flex-start;
     justify-content: center;

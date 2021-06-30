@@ -1,10 +1,11 @@
 import './Option.css';
-import React, { Component, useState } from 'react';
-import { Checkbox, FormControlLabel } from '@material-ui/core';
+import React from 'react';
 import MyCheckbox from './MyCheckbox';
+import { useWindowWidth } from '@react-hook/window-size'
 
 export default function CheckboxOption(props) {
     props = props.props
+    const windowWidth = useWindowWidth()
 
     const create_checkboxes = () => {
         var array = []
@@ -27,7 +28,8 @@ export default function CheckboxOption(props) {
     }
     
     return (
-        <div className="radio-container">
+        <div className="radio-container" style={{width: (windowWidth < 1000 ? '90%' : '40%')}}>
+            <p>{windowWidth}</p>
             <h3 className="snug">{props.title}</h3>
             {checkboxes}
         </div>

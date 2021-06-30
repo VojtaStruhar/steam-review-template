@@ -1,10 +1,13 @@
 import './Option.css';
 import React, { useState } from 'react';
 import { FormControlLabel, Radio, FormLabel, RadioGroup, FormControl } from '@material-ui/core';
+import { useWindowWidth } from '@react-hook/window-size'
 
 
 export default function RadioOption(props) {
-    props = props.props // This is kinda dumb, i dont get why JS does this to me
+    const windowWidth = useWindowWidth()
+
+    props = props.props 
     props.selectedState = ""
 
     const radioClicked = (event) => {
@@ -21,7 +24,7 @@ export default function RadioOption(props) {
     }
 
     return (
-        <div className="radio-container">
+        <div className="radio-container" style={{width: (windowWidth < 1000 ? '90%' : '40%')}}>
             <h3 className="snug">{props.title}</h3>
             <RadioGroup onChange={radioClicked}>
                 {choices()}

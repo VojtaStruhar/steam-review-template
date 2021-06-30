@@ -16,3 +16,10 @@ div.section {
   justify-content: center;
   align-items: center;
 }
+
+.button-centered {
+  height: 10vh; /* Magic here */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -4,12 +4,11 @@ import { FormControlLabel, Radio, FormLabel, RadioGroup, FormControl } from '@ma
 
 
 export default function RadioOption(props) {
-
-    const [selectedValue, setSelectedValue] = useState("");
     props = props.props // This is kinda dumb, i dont get why JS does this to me
+    props.selectedState = ""
 
     const radioClicked = (event) => {
-        setSelectedValue(event.target.value);
+        props.selectedState = event.target.value
         console.log(event.target.value)
     };
 

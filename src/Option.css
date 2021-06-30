@@ -1,6 +1,6 @@
 div.radio-container {
     margin: auto;
-    width: 50%;
+    width: 40%;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -8,7 +8,7 @@ div.radio-container {
     border: solid;
     margin-top: 8px;
     border-radius: 6px;
-    border-width: 1px;
+    border-width: 2px;
     border-color: slategray;
     padding: 4px;
     padding-left: 12px;

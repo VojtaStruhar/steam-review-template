@@ -38,6 +38,13 @@ p.App-header {
   margin-bottom: 4px;
   font-size: calc(5px + 2vmin);
 }
+
+/* middle */
+div.categories-container {
+  margin-bottom: 8px;
+}
+
+
 /* footer */
 .App-footer {
   background-color: #1e2127;

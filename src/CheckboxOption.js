@@ -21,7 +21,7 @@ function MyCheckbox(props) {
 export default function CheckboxOption(props) {
     props = props.props
 
-    const checkboxes = () => {
+    const create_checkboxes = () => {
         var array = []
         for (let i = 0; i < props.options.length; i++) {
             const element = props.options[i];
@@ -34,7 +34,7 @@ export default function CheckboxOption(props) {
     return (
         <div className="radio-container">
             <h3 className="snug">{props.title}</h3>
-            {checkboxes()}
+            { create_checkboxes() }
         </div>
     );
 

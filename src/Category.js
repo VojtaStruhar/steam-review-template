@@ -24,8 +24,6 @@ export default function Category(props) {
             <div className="centered">
                 <div>
                     {categories()}
-                    <CheckboxOption description="description custom" />
-                    <RadioOption props={props.props[0]} />
                 </div>
             </div>
         </div>

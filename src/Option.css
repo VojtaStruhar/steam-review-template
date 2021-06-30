@@ -5,7 +5,14 @@ div.radio-container {
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
-
+    border: solid;
+    margin-top: 8px;
+    border-radius: 6px;
+    border-width: 1px;
+    border-color: slategray;
+    padding: 4px;
+    padding-left: 12px;
+    background-color: aliceblue;
 }
 
 .snug {

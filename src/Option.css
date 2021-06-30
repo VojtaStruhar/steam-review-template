@@ -1,7 +1,15 @@
 div.radio-container {
+    margin: auto;
+    width: 50%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     background-color: aqua;
     justify-content: center;
     flex-direction: column;
+
+}
+
+.snug {
+    margin-top: 4px;
+    margin-bottom: 4px;
 }

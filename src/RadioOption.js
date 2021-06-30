@@ -9,7 +9,6 @@ export default function RadioOption(props) {
 
     const radioClicked = (event) => {
         props.selectedState = event.target.value
-        console.log(event.target.value)
     };
 
     const choices = () => {

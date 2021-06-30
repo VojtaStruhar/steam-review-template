@@ -10,7 +10,6 @@ export default function CheckboxOption(props) {
         var array = []
         for (let i = 0; i < props.options.length; i++) {
             const element = props.options[i];
-            console.log(element)
             array.push(<MyCheckbox props={{title: element, index: i, isOn: false}} />)
         }
         return array
@@ -20,8 +19,6 @@ export default function CheckboxOption(props) {
     props.get_selected = () => {
         var checked = []
         checkboxes.forEach(element => {
-            console.log(element.props)
-            console.log("parent view:", element.props.props.title ,element.props.props.isOn)
             if (element.props.props.isOn) {
                 checked.push(element.props.props.title)
             }

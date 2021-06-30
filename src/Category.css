@@ -18,8 +18,20 @@ div.section {
 }
 
 .button-centered {
-  height: 10vh; /* Magic here */
+  min-height: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin: 8px;
+}
+
+p.review {
+  width: 40%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 8px;
 }

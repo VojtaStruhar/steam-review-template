@@ -1,11 +1,15 @@
 import './Category.css';
-import React from 'react';
+import React, { useState } from 'react';
 import CheckboxOption from './CheckboxOption';
 import RadioOption from './RadioOption';
 import { Button } from '@material-ui/core';
 
 export default function Categories(props) {
 
+    const [reviewString, setReviewString] = useState("")
+    const [reviewInfo, setReviewInfo] = useState("")
+    const [clipboardFailed, setClipboardFailed] = useState(false) 
+    
     const create_categories = () => {
         var array = []
         for (let i = 0; i < props.props.length; i++) {
@@ -21,36 +25,51 @@ export default function Categories(props) {
     const categoryComponents = create_categories()
 
     const generate_review = () => {
-        var reviewString = ""
+        var localReviewString = ""
 
-        console.log("generate review")
         for (let i = 0; i < props.props.length; i++) {
             const categoryJson = props.props[i];
             const component = categoryComponents[i];
 
-            console.log(i, categoryJson.title)
 
-            reviewString = reviewString + "---{ " + categoryJson.title + " }---\n"
+            localReviewString = localReviewString + "---{ " + categoryJson.title + " }---\n"
 
 
             // With radio, only one option is selected
             if (categoryJson.type === "radio") {
                 categoryJson.options.forEach(option => {
-                    reviewString += ((component.props.props.selectedState === option ? "☑ " : "☐ ") + option)
-                    reviewString += "\n"
+                    localReviewString += ((component.props.props.selectedState === option ? "☑ " : "☐ ") + option)
+                    localReviewString += "\n"
                 });
             } else if (categoryJson.type === "check") {
                 const selectedOptions = component.props.props.get_selected()
                 categoryJson.options.forEach(option => {
                     // This check could have lesser complexity...
-                    reviewString += ((selectedOptions.includes(option) ? "☑ " : "☐ ") + option)
-                    reviewString += "\n"
+                    localReviewString += ((selectedOptions.includes(option) ? "☑ " : "☐ ") + option)
+                    localReviewString += "\n"
                 });
             } else {
-                reviewString += "ERROR - bad category type (should be 'radio' or 'check')\n"
+                localReviewString += "ERROR - bad category type (should be 'radio' or 'check')\n"
             }
-            reviewString += "\n"
+            localReviewString += "\n"
         }
+        console.log(localReviewString)
+        setReviewString(localReviewString)
+
+        navigator.clipboard.writeText(localReviewString).then(function () {
+            console.log('Async: Copying to clipboard was successful!');
+            setReviewInfo("The review has been copied into your clipboard!")
+            setClipboardFailed(false)
+        }, function (err) {
+            console.error('Async: Could not copy text: ', err);
+            setReviewInfo("Copying into clipboard failed.")
+            setClipboardFailed(true)
+        });
+    }
+
+    const check_review_in_new_window = () => {
+        var newWin = window.open('url','Steam review','height=700,width=400,scrollbars=yes,resizable=yes');
+        newWin.document.write(String.raw`${reviewString.replaceAll("\n", "<br/>")}`);
         console.log(reviewString)
     }
 
@@ -65,6 +84,15 @@ export default function Categories(props) {
                 <Button variant="contained" color="primary" onClick={generate_review}>
                     Generate Steam Review
                 </Button>
+                {reviewInfo !== "" &&
+                    <p className="review" >{reviewInfo}</p>
+                }
+                {clipboardFailed &&
+                    <Button onClick={check_review_in_new_window}>View text in separate window</Button>
+                }
+            </div>
+            <div>
+
             </div>
         </div>
     )

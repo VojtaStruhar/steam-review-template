@@ -8,7 +8,6 @@ export default function MyCheckbox(props) {
     const toggle = () => {
         props.props.isOn = !isChecked;
         setIsChecked(!isChecked)
-        console.log("toggle", props.props.isOn)
     }
 
     return (

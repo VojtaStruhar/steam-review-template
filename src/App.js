@@ -10,14 +10,14 @@ function App() {
         <h2 className="App-header">{"---{ Review Template }---"}</h2>
         <p className="App-header">☑ Awesome</p>
       </header>
-
+      
       <div className="categories-container">
         <Categories props={config_json.categories}/>
       </div>
 
       
       <footer className="App-footer">
-        <p>Vojtěch Struhár, 2021</p>
+        <p className="signature">Vojtěch Struhár, 2021</p>
       </footer>
     </div>
   );

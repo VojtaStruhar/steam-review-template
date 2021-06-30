@@ -40,11 +40,15 @@ export default function Categories(props) {
                     reviewString += "\n"
                 });
             } else if (categoryJson.type === "check") {
-                console.log(component.props)
-                console.log("category", component.props.props.get_selected())
+                const selectedOptions = component.props.props.get_selected()
+                categoryJson.options.forEach(option => {
+                    // This check could have lesser complexity...
+                    reviewString += ((selectedOptions.includes(option) ? "☑ " : "☐ ") + option)
+                    reviewString += "\n"
+                });
+            } else {
+                reviewString += "ERROR - bad category type (should be 'radio' or 'check')\n"
             }
-            
-
             reviewString += "\n"
         }
         console.log(reviewString)

@@ -18,10 +18,15 @@ export default function CheckboxOption(props) {
     const checkboxes = create_checkboxes()
 
     props.get_selected = () => {
+        var checked = []
         checkboxes.forEach(element => {
             console.log(element.props)
             console.log("parent view:", element.props.props.title ,element.props.props.isOn)
+            if (element.props.props.isOn) {
+                checked.push(element.props.props.title)
+            }
         });
+        return checked
     }
     
     return (

@@ -37,7 +37,7 @@ export default function Categories(props) {
                 if (categoryJson.type === "radio") {
                     reviewString += ((component.props.props.selectedState === option ? "☑ " : "☐ ") + option)
                 } else if (categoryJson.type === "check") {
-
+                    
                 }
                 reviewString += "\n"
             });

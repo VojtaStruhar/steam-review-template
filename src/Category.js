@@ -3,19 +3,17 @@ import React from 'react';
 import CheckboxOption from './CheckboxOption';
 import RadioOption from './RadioOption';
 
-export default class Category extends React.Component {
-    render() {
-        return (
-            <div>
-                <div className="centered">
-                    <div>
-                        <p>Paragraph</p>
-                        <CheckboxOption description="description custom" />
-                        <RadioOption />
-                    </div>
+export default function Category(props) {
+    return (
+        <div>
+            <div className="centered">
+                <div>
+                    <p>Paragraph</p>
+                    <CheckboxOption description="description custom" />
+                    <RadioOption props={props.props[0]} />
                 </div>
             </div>
-        );
-    }
+        </div>
+    )
 }
 

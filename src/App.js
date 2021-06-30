@@ -14,9 +14,9 @@ function App() {
       </header>
 
       <div>
-        <Category/>
+        <Category props={config_json.categories}/>
       </div>
-      <p> xd </p>
+      <p> xd {config_json.name}</p>
       <footer className="App-footer">
         <p>Vojtěch Struhár, 2021</p>
       </footer>

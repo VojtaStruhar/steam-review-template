@@ -53,6 +53,10 @@ export default function Categories(props) {
             }
             localReviewString += "\n"
         }
+        // Credit for Steam's formatting system
+        localReviewString += "[hr][/hr]\n"
+        localReviewString += "Grab this review template [url=https://vojtastruhar.github.io/steam-review-template/] here [/url].\n"
+
         console.log(localReviewString)
         setReviewString(localReviewString)
 
@@ -90,9 +94,6 @@ export default function Categories(props) {
                 {clipboardFailed &&
                     <Button onClick={check_review_in_new_window}>View text in separate window</Button>
                 }
-            </div>
-            <div>
-
             </div>
         </div>
     )

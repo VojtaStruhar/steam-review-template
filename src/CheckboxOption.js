@@ -29,7 +29,6 @@ export default function CheckboxOption(props) {
     
     return (
         <div className="radio-container" style={{width: (windowWidth < 1000 ? '90%' : '40%')}}>
-            <p>{windowWidth}</p>
             <h3 className="snug">{props.title}</h3>
             {checkboxes}
         </div>

@@ -72,7 +72,7 @@ export default function Categories(props) {
     }
 
     const check_review_in_new_window = () => {
-        var newWin = window.open('url','Steam review','height=700,width=400,scrollbars=yes,resizable=yes');
+        var newWin = window.open('url','Steam review','height=700,width=500,scrollbars=yes,resizable=yes');
         newWin.document.write(String.raw`${reviewString.replaceAll("\n", "<br/>")}`);
         console.log(reviewString)
     }

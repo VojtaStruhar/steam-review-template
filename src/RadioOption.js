@@ -12,6 +12,7 @@ export default function RadioOption(props) {
 
     const radioClicked = (event) => {
         props.selectedState = event.target.value
+        sessionStorage.setItem(props.title, event.target.value)
     };
 
     const choices = () => {

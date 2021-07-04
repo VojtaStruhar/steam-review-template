@@ -38,7 +38,7 @@ export default function Categories(props) {
             // With radio, only one option is selected
             if (categoryJson.type === "radio") {
                 categoryJson.options.forEach(option => {
-                    localReviewString += ((component.props.props.selectedState === option ? "☑ " : "☐ ") + option)
+                    localReviewString += ((sessionStorage.getItem(categoryJson.title) === option ? "☑ " : "☐ ") + option)
                     localReviewString += "\n"
                 });
             } else if (categoryJson.type === "check") {

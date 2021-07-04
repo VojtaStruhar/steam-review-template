@@ -13,7 +13,7 @@ export default function CheckboxOption(props) {
         var array = []
         for (let i = 0; i < props.options.length; i++) {
             const element = props.options[i];
-            array.push(<MyCheckbox props={{title: element, index: i, isOn: false}} />)
+            array.push(<MyCheckbox props={{title: element, index: i, category: props.title}} />)
         }
         return array
     }

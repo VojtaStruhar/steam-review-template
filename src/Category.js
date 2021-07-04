@@ -42,7 +42,7 @@ export default function Categories(props) {
                     localReviewString += "\n"
                 });
             } else if (categoryJson.type === "check") {
-                const selectedOptions = component.props.props.get_selected()
+                const selectedOptions = sessionStorage.getItem(categoryJson.title)
                 categoryJson.options.forEach(option => {
                     // This check could have lesser complexity...
                     localReviewString += ((selectedOptions.includes(option) ? "☑ " : "☐ ") + option)

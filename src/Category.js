@@ -37,12 +37,13 @@ export default function Categories(props) {
 
             // With radio, only one option is selected
             if (categoryJson.type === "radio") {
+                var saved = sessionStorage.getItem(categoryJson.title) || ""
                 categoryJson.options.forEach(option => {
-                    localReviewString += ((sessionStorage.getItem(categoryJson.title) === option ? "☑ " : "☐ ") + option)
+                    localReviewString += ((saved === option ? "☑ " : "☐ ") + option)
                     localReviewString += "\n"
                 });
             } else if (categoryJson.type === "check") {
-                const selectedOptions = sessionStorage.getItem(categoryJson.title)
+                const selectedOptions = JSON.parse(sessionStorage.getItem(categoryJson.title) || "[]")
                 categoryJson.options.forEach(option => {
                     // This check could have lesser complexity...
                     localReviewString += ((selectedOptions.includes(option) ? "☑ " : "☐ ") + option)

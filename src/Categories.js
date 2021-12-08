@@ -6,9 +6,7 @@ import { Button } from '@material-ui/core';
 
 export default function Categories(props) {
 
-    const [reviewString, setReviewString] = useState("")
     const [reviewInfo, setReviewInfo] = useState("")
-    const [clipboardFailed, setClipboardFailed] = useState(false)
 
     const create_categories = () => {
         var array = []
@@ -28,7 +26,7 @@ export default function Categories(props) {
         var localReviewString = ""
 
         function appendCategoryTitle(title) {
-            localReviewString += localReviewString + "---{ " + title + " }---\n"
+            localReviewString += "---{ " + title + " }---\n"
         }
 
         function appendOption(option, checked) {
@@ -37,7 +35,6 @@ export default function Categories(props) {
 
         for (let i = 0; i < props.props.length; i++) {
             const categoryJson = props.props[i];
-            const component = categoryComponents[i];
 
             appendCategoryTitle(categoryJson.title)
 
@@ -62,26 +59,21 @@ export default function Categories(props) {
         }
 
         // Credit 
-        localReviewString += "\nGrab this review template here! https://vojtastruhar.github.io/steam-review-template/\n"
-
-        console.log(localReviewString)
-        setReviewString(localReviewString)
+        localReviewString += "\nGrab this review template here! 👉 https://vojtastruhar.github.io/steam-review-template/\n"
 
         navigator.clipboard.writeText(localReviewString).then(function () {
             console.log('Async: Copying to clipboard was successful!');
             setReviewInfo("The review has been copied into your clipboard!")
-            setClipboardFailed(false)
         }, function (err) {
             console.error('Async: Could not copy text: ', err);
-            setReviewInfo("Copying into clipboard failed.")
-            setClipboardFailed(true)
+            setReviewInfo("Copying into clipboard failed. New window with the review should appear, please, copy it manually.")
+            check_review_in_new_window(localReviewString)
         });
     }
 
-    const check_review_in_new_window = () => {
+    const check_review_in_new_window = (text) => {
         var newWin = window.open('url', 'Steam review', 'height=700,width=500,scrollbars=yes,resizable=yes');
-        newWin.document.write(String.raw`${reviewString.replaceAll("\n", "<br/>")}`);
-        console.log(reviewString)
+        newWin.document.write(String.raw`${text.replaceAll("\n", "<br/>")}`);
     }
 
     return (
@@ -97,9 +89,6 @@ export default function Categories(props) {
                 </Button>
                 {reviewInfo !== "" &&
                     <p className="review" >{reviewInfo}</p>
-                }
-                {clipboardFailed &&
-                    <Button onClick={check_review_in_new_window}>View text in separate window</Button>
                 }
             </div>
         </div>

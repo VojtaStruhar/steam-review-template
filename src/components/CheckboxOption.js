@@ -7,8 +7,6 @@ export default function CheckboxOption(props) {
     props = props.props
     const windowWidth = useWindowWidth()
 
-    console.log("CheckboxOption function call i guess")
-
     const create_checkboxes = () => {
         var array = []
         for (let i = 0; i < props.options.length; i++) {

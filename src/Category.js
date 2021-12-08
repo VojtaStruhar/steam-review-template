@@ -1,7 +1,7 @@
 import './Category.css';
 import React, { useState } from 'react';
-import CheckboxOption from './CheckboxOption';
-import RadioOption from './RadioOption';
+import CheckboxOption from './components/CheckboxOption';
+import RadioOption from './components/RadioOption';
 import { Button } from '@material-ui/core';
 
 export default function Categories(props) {

@@ -1,7 +1,7 @@
 import './Option.css';
 import React, { Component, useState } from 'react';
 import { Checkbox, FormControlLabel } from '@material-ui/core';
-import arrayRemove from './utility/arrays-helper'
+import arrayRemove from '../utility/arrays-helper'
 
 export default function MyCheckbox(props) {
     const [isChecked, setIsChecked] = useState(false)

@@ -8,8 +8,8 @@ export default function Categories(props) {
 
     const [reviewString, setReviewString] = useState("")
     const [reviewInfo, setReviewInfo] = useState("")
-    const [clipboardFailed, setClipboardFailed] = useState(false) 
-    
+    const [clipboardFailed, setClipboardFailed] = useState(false)
+
     const create_categories = () => {
         var array = []
         for (let i = 0; i < props.props.length; i++) {
@@ -27,36 +27,42 @@ export default function Categories(props) {
     const generate_review = () => {
         var localReviewString = ""
 
+        function appendCategoryTitle(title) {
+            localReviewString += localReviewString + "---{ " + title + " }---\n"
+        }
+
+        function appendOption(option, checked) {
+            localReviewString += (checked ? "☑ " : "☐ ") + option + "\n"
+        }
+
         for (let i = 0; i < props.props.length; i++) {
             const categoryJson = props.props[i];
             const component = categoryComponents[i];
 
-
-            localReviewString = localReviewString + "---{ " + categoryJson.title + " }---\n"
-
+            appendCategoryTitle(categoryJson.title)
 
             // With radio, only one option is selected
             if (categoryJson.type === "radio") {
-                var saved = sessionStorage.getItem(categoryJson.title) || ""
+                const saved = sessionStorage.getItem(categoryJson.title) || ""
                 categoryJson.options.forEach(option => {
-                    localReviewString += ((saved === option ? "☑ " : "☐ ") + option)
-                    localReviewString += "\n"
+                    appendOption(option, saved === option)
                 });
             } else if (categoryJson.type === "check") {
+                // With checkbox, multiple options can be selected
                 const selectedOptions = JSON.parse(sessionStorage.getItem(categoryJson.title) || "[]")
                 categoryJson.options.forEach(option => {
-                    // This check could have lesser complexity...
-                    localReviewString += ((selectedOptions.includes(option) ? "☑ " : "☐ ") + option)
-                    localReviewString += "\n"
+                    appendOption(option, selectedOptions.includes(option))
                 });
             } else {
                 localReviewString += "ERROR - bad category type. (radio | check)\n"
             }
+
+            // newline under every category
             localReviewString += "\n"
         }
-        // Credit for Steam's formatting system
-        localReviewString += "[hr][/hr]\n"
-        localReviewString += "Grab this review template [url=https://vojtastruhar.github.io/steam-review-template/] here [/url].\n"
+
+        // Credit 
+        localReviewString += "\nGrab this review template here! https://vojtastruhar.github.io/steam-review-template/\n"
 
         console.log(localReviewString)
         setReviewString(localReviewString)
@@ -73,7 +79,7 @@ export default function Categories(props) {
     }
 
     const check_review_in_new_window = () => {
-        var newWin = window.open('url','Steam review','height=700,width=500,scrollbars=yes,resizable=yes');
+        var newWin = window.open('url', 'Steam review', 'height=700,width=500,scrollbars=yes,resizable=yes');
         newWin.document.write(String.raw`${reviewString.replaceAll("\n", "<br/>")}`);
         console.log(reviewString)
     }

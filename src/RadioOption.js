@@ -1,13 +1,13 @@
 import './Option.css';
 import React from 'react';
-import { FormControlLabel, Radio, RadioGroup} from '@material-ui/core';
+import { FormControlLabel, Radio, RadioGroup } from '@material-ui/core';
 import { useWindowWidth } from '@react-hook/window-size'
 
 
 export default function RadioOption(props) {
     const windowWidth = useWindowWidth()
 
-    props = props.props 
+    props = props.props
     props.selectedState = ""
 
     const radioClicked = (event) => {
@@ -25,7 +25,7 @@ export default function RadioOption(props) {
     }
 
     return (
-        <div className="radio-container" style={{width: (windowWidth < 1000 ? '90%' : '40%')}}>
+        <div className="radio-container" style={{ width: (windowWidth < 1000 ? '90%' : '40%') }}>
             <h3 className="snug">{props.title}</h3>
             <RadioGroup onChange={radioClicked}>
                 {choices()}

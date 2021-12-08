@@ -1,5 +1,5 @@
 import './App.css';
-import Categories from './Category';
+import Categories from './Categories';
 import config_json from './review_templates/config_rdr2.json'
 
 function App() {

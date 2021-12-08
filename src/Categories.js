@@ -1,4 +1,4 @@
-import './Category.css';
+import './Categories.css';
 import React, { useState } from 'react';
 import CheckboxOption from './components/CheckboxOption';
 import RadioOption from './components/RadioOption';

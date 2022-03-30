@@ -1,11 +1,10 @@
-import './App.css';
-import Categories from './Categories';
-import config_json from './review_templates/config_rdr2.json'
+import "./App.css";
+import Categories from "./Categories";
+import config_json from "./review_templates/config_rdr2.json";
 
 function App() {
-
   return (
-    <div className="App">
+    <div>
       <header className="App-header">
         <h2 className="App-header">{"---{ Review Template }---"}</h2>
         <p className="App-header">☑ Awesome</p>

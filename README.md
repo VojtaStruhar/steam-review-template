@@ -1,7 +1,5 @@
 #### Hosted with ❤ by Github over here: https://vojtastruhar.github.io/steam-review-template/
 
-
-
 # Steam Review Template
 
 This is a tool to simplify the creation of copy-pasta reviews that are somewhat popular on Steam. The categories and options are not from my head, I just copied them from somewhere. There are some minor variations on some of the options, but this is the typical rundown.
@@ -22,5 +20,4 @@ You just tick all the boxes that you want, the output should look something like
 ☐ Ask NASA if they have a spare computer
 ```
 
-It will generate with a line on the bottom that gives me credit. I would appreciate it if you left it there, but you don't have to if you don't like it :)
-
+It will generate with a line on the bottom that gives me credit. I would appreciate it if you left it there, but you don't have to :)

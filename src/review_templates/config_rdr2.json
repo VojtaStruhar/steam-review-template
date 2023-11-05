@@ -61,6 +61,19 @@
             ]
         },
         {
+            "title": "Game Size",
+            "type": "radio",
+            "options": [
+              "Floppy Disk",
+              "Old Fashioned",
+              "Workable",
+              "Big",
+              "Will eat 10% of your 1TB hard drive",
+              "You will want an entire hard drive to hold it",
+              "You will need to invest in a black hole to hold all the data"
+            ]
+          },          
+        {
             "title": "Difficulty",
             "type": "radio",
             "options": [

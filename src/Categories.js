@@ -85,7 +85,7 @@ export default function Categories(props) {
             </div>
             <div className="button-centered">
                 <Button variant="contained" color="primary" onClick={generate_review}>
-                    Generate Steam Review
+                    Steamレビューを生成（クリップボードにコピーされます）
                 </Button>
                 {reviewInfo !== "" &&
                     <p className="review" >{reviewInfo}</p>

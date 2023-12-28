@@ -2,145 +2,145 @@
     "name": "Red Dead Redemption 2",
     "categories": [
         {
-            "title": "Graphics",
+            "title": "グラフィックス",
             "type": "radio",
             "options": [
-                "You forget what reality is",
-                "Beautiful",
-                "Good",
-                "Decent",
-                "Bad",
-                "Don‘t look too long at it",
+                "現実を忘れる",
+                "美しい",
+                "良い",
+                "まあまあ",
+                "悪い",
+                "長く見ないで",
                 "MS-DOS"
             ]
         },
         {
-            "title": "Gameplay",
+            "title": "ゲームプレイ",
             "type": "radio",
             "options": [
-                "Very good",
-                "Good",
-                "It's just gameplay",
-                "Mehh",
-                "Watch paint dry instead",
-                "Just don't"
+                "とても良い",
+                "良い",
+                "普通のゲームプレイ",
+                "まあまあ",
+                "塗料の乾燥を見る方がまし",
+                "やめとけ"
             ]
         },
         {
-            "title": "Audio",
+            "title": "オーディオ",
             "type": "radio",
             "options": [
-                "Eargasm",
-                "Very good",
-                "Good",
-                "Not too bad",
-                "Bad",
-                "I'm now deaf"
+                "耳が幸せ",
+                "とても良い",
+                "良い",
+                "悪くない",
+                "悪い",
+                "耳が聞こえない"
             ]
         },
         {
-            "title": "Audience",
+            "title": "対象オーディエンス",
             "type": "check",
             "options": [
-                "Kids",
-                "Teens",
-                "Adults",
-                "Grandma"
+                "子供",
+                "ティーン",
+                "大人",
+                "おばあちゃん"
             ]
         },
         {
-            "title": "PC Requirements",
+            "title": "PC要件",
             "type": "radio",
             "options": [
-                "Check if you can run paint",
-                "Potato",
-                "Decent",
-                "Fast",
-                "Rich boi",
-                "Ask NASA if they have a spare computer"
+                "ペイントが動くか確認",
+                "ポテト",
+                "まあまあ",
+                "速い",
+                "お金持ち",
+                "NASAに余分なコンピュータを尋ねる"
             ]
         },
         {
-            "title": "Game Size",
+            "title": "ゲームサイズ",
             "type": "radio",
             "options": [
-              "Floppy Disk",
-              "Old Fashioned",
-              "Workable",
-              "Big",
-              "Will eat 10% of your 1TB hard drive",
-              "You will want an entire hard drive to hold it",
-              "You will need to invest in a black hole to hold all the data"
-            ]
-          },          
-        {
-            "title": "Difficulty",
-            "type": "radio",
-            "options": [
-                "Just press 'W'",
-                "Easy",
-                "Easy to learn / Hard to master",
-                "Significant brain usage",
-                "Difficult",
-                "Dark Souls"
+              "フロッピーディスク",
+              "古風",
+              "使える",
+              "大きい",
+              "1TBハードドライブの10%を食べる",
+              "全体のハードドライブを保持する",
+              "データを保持するためにブラックホールに投資する必要がある"
             ]
         },
         {
-            "title": "Grind",
+            "title": "難易度",
             "type": "radio",
             "options": [
-                "Nothing to grind",
-                "Only if u care about leaderboards/ranks",
-                "Isn't necessary to progress",
-                "Average grind level",
-                "Too much grind",
-                "You'll need a second life for grinding"
+                "'W'を押すだけ",
+                "簡単",
+                "習うは易し、習得するは難し",
+                "かなりの脳の使用",
+                "難しい",
+                "ダークソウル"
             ]
         },
         {
-            "title": "Story",
+            "title": "グラインド",
             "type": "radio",
             "options": [
-                "No Story",
-                "Some lore",
-                "Average",
-                "Good",
-                "Lovely",
-                "It'll replace your life"
+                "研ぎする必要なし",
+                "リーダーボード/ランクにこだわるなら",
+                "進行には必要ない",
+                "平均的なグラインドレベル",
+                "研ぎすぎ",
+                "研ぎのために第二の人生が必要"
             ]
         },
         {
-            "title": "Game Time",
+            "title": "ストーリー",
             "type": "radio",
             "options": [
-                "Long enough for a cup of coffee",
-                "Short",
-                "Average",
-                "Long",
-                "To infinity and beyond"
+                "ストーリーなし",
+                "いくつかの伝承",
+                "平均",
+                "良い",
+                "素敵",
+                "あなたの人生を置き換える"
             ]
         },
         {
-            "title": "Price",
+            "title": "ゲーム時間",
             "type": "radio",
             "options": [
-                "It's free!",
-                "Worth the price",
-                "If it's on sale",
-                "If u have some spare money left",
-                "Not recommended",
-                "You could also just burn your money"
+                "コーヒーを飲むのに十分な長さ",
+                "短い",
+                "平均",
+                "長い",
+                "無限に及ぶ"
             ]
         },
         {
-            "title": "Bugs",
+            "title": "価格",
             "type": "radio",
             "options": [
-                "Never heard of",
-                "Minor bugs",
-                "Can get annoying",
+                "無料です！",
+                "価格に見合う",
+                "セールの時に",
+                "余分なお金があれば",
+                "おすすめしない",
+                "お金を燃やす方がいい"
+            ]
+        },
+        {
+            "title": "バグ",
+            "type": "radio",
+            "options": [
+                "聞いたことがない",
+                "些細なバグ",
+                "イライラする",
                 "ARK: Survival Evolved",
-                "The game itself is a big terrarium for bugs"
+                "ゲーム自体がバグの大きなテラリウム"
             ]
         },
         {
@@ -161,3 +161,4 @@
         }
     ]
 }
+

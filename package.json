@@ -2,7 +2,7 @@
   "name": "steam-review",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://steam-review-jp.picopico.games/",
+  "homepage": "https://j-o-lantern0422.github.io/steam-review-template",
   "dependencies": {
     "@material-ui/core": "^4.11.4",
     "@react-hook/window-size": "^3.0.7",

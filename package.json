@@ -1,6 +1,6 @@
 {
   "name": "steam-review",
-  "version": "0.1.0",
+  "version": "2.0.0",
   "private": true,
   "homepage": "https://VojtaStruhar.github.io/steam-review-template",
   "dependencies": {
@@ -15,7 +15,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "eslintConfig": {
     "extends": [

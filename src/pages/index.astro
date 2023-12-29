@@ -5,7 +5,7 @@ import PageLayout from "../layouts/PageLayout.astro";
 
 <PageLayout title="Steam Review Template">
   <header class="bg-slate-700 text-white py-2 flex flex-col items-center">
-    <h2>{"---{ Review Template }---"}</h2>
+    <h1>{"---{ Review Template }---"}</h1>
     <p class="mt-0">☑ Awesome</p>
   </header>
 
@@ -30,7 +30,7 @@ import PageLayout from "../layouts/PageLayout.astro";
     {
       config_json.categories.map((category) => (
         <form class="flex flex-col gap-2 ">
-          <fieldset class="rounded-lg my-4 shadow border bg-sky-100">
+          <fieldset class="rounded-lg my-4 shadow-md border bg-sky-100">
             <legend class="font-mono font-bold text-xl bg-emerald-300 px-4 rounded-lg shadow">
               {category.title}
             </legend>
@@ -165,5 +165,10 @@ import PageLayout from "../layouts/PageLayout.astro";
   input[type="radio"],
   input[type="checkbox"] {
     transform: scale(1.25);
+  }
+
+  fieldset,
+  legend {
+    border: 1px solid #ccc;
   }
 </style>

@@ -35,28 +35,23 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Detect package manager
-        id: detect-package-manager
-        run: |
-          echo "manager=pnpm" >> $GITHUB_OUTPUT
-          echo "command=install" >> $GITHUB_OUTPUT
-          echo "runner=pnpm" >> $GITHUB_OUTPUT
-          exit 0
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+          with:
+            version: 8
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
+          cache: "pnpm"
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
       - name: Install dependencies
-        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+        run: pnpm install
         working-directory: ${{ env.BUILD_PATH }}
       - name: Build with Astro
-        run: |
-          ${{ steps.detect-package-manager.outputs.runner }} astro build \
-            --site "${{ steps.pages.outputs.origin }}" \
-            --base "${{ steps.pages.outputs.base_path }}"
+        run: pnpm run build
         working-directory: ${{ env.BUILD_PATH }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

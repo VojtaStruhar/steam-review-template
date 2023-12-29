@@ -23,6 +23,10 @@ import PageLayout from "../layouts/PageLayout.astro";
         check it out on Github</a
       >!
     </p>
+    <p>
+      The result generates with a line at the bottom that gives me credit.
+      Leaving it there is optional, but highly appreciated! Thanks!
+    </p>
     {
       config_json.categories.map((category) => (
         <form class="flex flex-col gap-2 ">
@@ -102,6 +106,10 @@ import PageLayout from "../layouts/PageLayout.astro";
             }
           });
         });
+
+        output.innerHTML += `\n`;
+        output.innerHTML += `---{ Author }---\n`;
+        output.innerHTML += `☑ https://vojtastruhar.github.io/steam-review-template \n`;
       }
     }
 

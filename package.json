@@ -10,10 +10,8 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro",
     "predeploy": "pnpm run build",
     "deploy": "gh-pages -d dist"
   },

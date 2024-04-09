@@ -6,4 +6,11 @@ export default defineConfig({
   site: "https://vojtastruhar.github.io/",
   base: "/steam-review-template",
   integrations: [tailwind()],
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en", "es"],
+    routing: {
+      prefixDefaultLocale: true
+    }
+  }
 });

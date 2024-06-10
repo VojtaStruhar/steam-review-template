@@ -123,9 +123,12 @@ import PageLayout from "../layouts/PageLayout.astro";
     let copyButton = document.getElementById("copy-output");
     if (copyButton) {
       copyButton.addEventListener("click", () => {
-        navigator.clipboard.writeText(
-          document.getElementById("output").innerText
-        );
+        const outputElement = document.getElementById("output");
+        if (outputElement) {
+          navigator.clipboard.writeText(outputElement.innerText);
+        } else {
+          alert("Failed to copy output to clipboard!");
+        }
       });
     }
     copyButton?.style.setProperty("display", "none");
@@ -135,14 +138,14 @@ import PageLayout from "../layouts/PageLayout.astro";
         data[input.name] = [];
       }
       input.addEventListener("change", (event) => {
-        let target = event.target;
+        let target = event.target as HTMLInputElement;
         if (target) {
           if (target.type == "checkbox") {
             if (target.checked) {
               data[target.name].push(target.value);
             } else {
               data[target.name] = data[target.name].filter(
-                (item) => item != target.value
+                (item) => item != target.value,
               );
             }
           } else {

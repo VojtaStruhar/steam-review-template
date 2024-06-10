@@ -28,35 +28,38 @@ import PageLayout from "../layouts/PageLayout.astro";
       Leaving it there is optional, but highly appreciated! Thanks!
     </p>
     {
-      config_json.categories.map((category) => (
+      config_json.categories.map((category, categoryIndex) => (
         <form class="flex flex-col gap-2 ">
           <fieldset class="rounded-lg my-4 shadow-md border bg-sky-100">
             <legend class="font-mono font-bold text-xl bg-emerald-300 px-4 rounded-lg shadow">
               {category.title}
             </legend>
-            {category.options.map((item) => (
-              <>
-                {category.type == "radio" ? (
-                  <input
-                    type="radio"
-                    id={item}
-                    name={category.title}
-                    value={item}
-                  />
-                ) : (
-                  <input
-                    type="checkbox"
-                    id={item}
-                    name={category.title}
-                    value={item}
-                  />
-                )}
-                <label class="mx-2" for={item}>
-                  {item}
-                </label>
-                <br />
-              </>
-            ))}
+            {category.options.map((item, itemIndex) => {
+              const itemId = `${categoryIndex}:${itemIndex}`;
+              return (
+                <>
+                  {category.type == "radio" ? (
+                    <input
+                      type="radio"
+                      id={itemId}
+                      name={category.title}
+                      value={item}
+                    />
+                  ) : (
+                    <input
+                      type="checkbox"
+                      id={itemId}
+                      name={category.title}
+                      value={item}
+                    />
+                  )}
+                  <label class="mx-2" for={itemId}>
+                    {item}
+                  </label>
+                  <br />
+                </>
+              );
+            })}
           </fieldset>
         </form>
       ))

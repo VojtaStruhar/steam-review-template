@@ -44,6 +44,7 @@ import PageLayout from "../layouts/PageLayout.astro";
                       id={itemId}
                       name={category.title}
                       value={item}
+                      class="plausible-event-name=Option+Checked"
                     />
                   ) : (
                     <input
@@ -51,6 +52,7 @@ import PageLayout from "../layouts/PageLayout.astro";
                       id={itemId}
                       name={category.title}
                       value={item}
+                      class="plausible-event-name=Option+Checked"
                     />
                   )}
                   <label class="mx-2" for={itemId}>
@@ -67,7 +69,10 @@ import PageLayout from "../layouts/PageLayout.astro";
     <div class="flex justify-center">
       <button
         id="output-button"
-        class="py-4 px-8 text-lg font-bold rounded-lg border-none shadow bg-amber-400 hover:cursor-pointer hover:shadow-lg transition-all"
+        class:list={[
+          "plausible-event-name=Generate+Output",
+          "py-4 px-8 text-lg font-bold rounded-lg border-none shadow bg-amber-400 hover:cursor-pointer hover:shadow-lg transition-all",
+        ]}
       >
         Generate Steam Review!</button
       >

@@ -12,9 +12,9 @@ import PageLayout from "../layouts/PageLayout.astro";
   <div class="max-w-screen-sm mx-auto px-4">
     <p>
       This little tool simplifies the creation of copy-pasta Steam reviews (if
-      you are on this website, this <em>is</em> what you are looking for). I
-      find them moderately funny, so I made this website to avoid copy-pasting
-      the copy pasta so much.&nbsp;😆
+      you are on this website, this <em>is</em> what you are looking for). I find
+      them moderately funny, so I made this website to avoid copy-pasting the copy
+      pasta so much.&nbsp;😆
     </p>
     <p>
       The code is open source &rarr; <a
@@ -76,7 +76,10 @@ import PageLayout from "../layouts/PageLayout.astro";
     <div class="flex justify-center mt-4">
       <button
         id="copy-output"
-        class="py-2 px-4 text-lg rounded-lg border-none shadow bg-sky-100 hover:cursor-pointer hover:shadow-lg transition-all"
+        class:list={[
+          "plausible-event-name=Copy+Output",
+          "py-2 px-4 text-lg rounded-lg border-none shadow bg-sky-100 hover:cursor-pointer hover:shadow-lg transition-all",
+        ]}
       >
         Copy output</button
       >
@@ -133,7 +136,7 @@ import PageLayout from "../layouts/PageLayout.astro";
     }
     copyButton?.style.setProperty("display", "none");
 
-    [...document.getElementsByTagName("input")].forEach((input) => {
+    Array.from(document.getElementsByTagName("input")).forEach((input) => {
       if (input.type == "checkbox") {
         data[input.name] = [];
       }

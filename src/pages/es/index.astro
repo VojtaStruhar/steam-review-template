@@ -1,19 +1,25 @@
 ---
 import config_json from "../../review_templates/template_es.json";
 import PageLayout from "../../layouts/PageLayout.astro";
+import OptionForm from "../../components/OptionForm.astro";
+import UKFlag from "../../components/flags/UKFlag.astro";
 ---
 
 <PageLayout title="Plantilla de reseñas de steam">
   <header class="bg-slate-700 text-white py-2 flex flex-col items-center">
     <h1>{"---{ Plantilla para reseñas }---"}</h1>
-    <a href="/steam-review-template/en/" class="mt-0 text-white">Sitio en ingles</a>
+    <a href="/steam-review-template/en/" class="mt-0 text-white"
+      ><UKFlag class="w-4 h-4" /></a
+    >
     <p class="mt-0">☑ Asombroso</p>
   </header>
 
   <div class="max-w-screen-sm mx-auto px-4">
     <p>
-      
-Esta pequeña herramienta simplifica la creación de reseñas de Steam de copiar y pegar (si estás en este sitio web, esto es lo que estás buscando). Las encuentro moderadamente graciosas, así que hice este sitio web para evitar copiar y pegar tanto.&nbsp;😆
+      Esta pequeña herramienta simplifica la creación de reseñas de Steam de
+      copiar y pegar (si estás en este sitio web, esto es lo que estás
+      buscando). Las encuentro moderadamente graciosas, así que hice este sitio
+      web para evitar copiar y pegar tanto.&nbsp;😆
     </p>
     <p>
       Es de código abierto! &rarr; <a
@@ -23,40 +29,12 @@ Esta pequeña herramienta simplifica la creación de reseñas de Steam de copiar
       >!
     </p>
     <p>
-      El resultado genera una línea en la parte inferior que me da crédito. Dejarla ahí es opcional, ¡pero altamente apreciado! ¡Gracias!
+      El resultado genera una línea en la parte inferior que me da crédito.
+      Dejarla ahí es opcional, ¡pero altamente apreciado! ¡Gracias!
     </p>
     {
       config_json.categories.map((category) => (
-        <form class="flex flex-col gap-2 ">
-          <fieldset class="rounded-lg my-4 shadow-md border bg-sky-100">
-            <legend class="font-mono font-bold text-xl bg-emerald-300 px-4 rounded-lg shadow">
-              {category.title}
-            </legend>
-            {category.options.map((item) => (
-              <>
-                {category.type == "radio" ? (
-                  <input
-                    type="radio"
-                    id={item}
-                    name={category.title}
-                    value={item}
-                  />
-                ) : (
-                  <input
-                    type="checkbox"
-                    id={item}
-                    name={category.title}
-                    value={item}
-                  />
-                )}
-                <label class="mx-2" for={item}>
-                  {item}
-                </label>
-                <br />
-              </>
-            ))}
-          </fieldset>
-        </form>
+        <OptionForm category={category} />
       ))
     }
     <div class="flex justify-center">
@@ -79,74 +57,6 @@ Esta pequeña herramienta simplifica la creación de reseñas de Steam de copiar
 
     <pre id="output"></pre>
   </div>
-
-  <script>
-    var data = {};
-    import config_json from "../../review_templates/template_es.json";
-
-    function showOutput() {
-      copyButton?.style.setProperty("display", "block");
-      let output = document.getElementById("output");
-      if (output) {
-        output.innerHTML = "";
-        config_json.categories.forEach((category) => {
-          output.innerHTML += `\n---{ ${category.title} }---\n`;
-          category.options.forEach((item) => {
-            if (
-              category.type === "check" &&
-              data[category.title].includes(item)
-            ) {
-              output.innerHTML += `☑ ${item}\n`;
-            } else if (data[category.title] === item) {
-              output.innerHTML += `☑ ${item}\n`;
-            } else {
-              output.innerHTML += `☐ ${item}\n`;
-            }
-          });
-        });
-
-        output.innerHTML += `\n`;
-        output.innerHTML += `---{ Autor }---\n`;
-        output.innerHTML += `☑ https://vojtastruhar.github.io/steam-review-template \n`;
-      }
-    }
-
-    let outputButton = document.getElementById("output-button");
-    if (outputButton) {
-      outputButton.addEventListener("click", showOutput);
-    }
-    let copyButton = document.getElementById("copy-output");
-    if (copyButton) {
-      copyButton.addEventListener("click", () => {
-        navigator.clipboard.writeText(
-          document.getElementById("output").innerText
-        );
-      });
-    }
-    copyButton?.style.setProperty("display", "none");
-
-    [...document.getElementsByTagName("input")].forEach((input) => {
-      if (input.type == "checkbox") {
-        data[input.name] = [];
-      }
-      input.addEventListener("change", (event) => {
-        let target = event.target;
-        if (target) {
-          if (target.type == "checkbox") {
-            if (target.checked) {
-              data[target.name].push(target.value);
-            } else {
-              data[target.name] = data[target.name].filter(
-                (item) => item != target.value
-              );
-            }
-          } else {
-            data[target.name] = target.value;
-          }
-        }
-      });
-    });
-  </script>
 
   <footer class="bg-slate-700 text-white py-2 flex flex-col items-end">
     <p class="px-8">

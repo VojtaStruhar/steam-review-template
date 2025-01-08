@@ -2,15 +2,13 @@
 import config_json from "../../review_templates/template_es.json";
 import PageLayout from "../../layouts/PageLayout.astro";
 import OptionForm from "../../components/OptionForm.astro";
-import UKFlag from "../../components/flags/UKFlag.astro";
+import FlagSelect from "../../components/FlagSelect.astro";
 ---
 
 <PageLayout title="Plantilla de reseñas de steam">
   <header class="bg-slate-700 text-white py-2 flex flex-col items-center">
     <h1>{"---{ Plantilla para reseñas }---"}</h1>
-    <a href="/steam-review-template/en/" class="mt-0 text-white"
-      ><UKFlag class="w-4 h-4" /></a
-    >
+    <FlagSelect />
     <p class="mt-0">☑ Asombroso</p>
   </header>
 

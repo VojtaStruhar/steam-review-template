@@ -2,15 +2,13 @@
 import config_json from "../../review_templates/template_en.json";
 import PageLayout from "../../layouts/PageLayout.astro";
 import OptionForm from "../../components/OptionForm.astro";
-import SpainFlag from "../../components/flags/SpainFlag.astro";
+import FlagSelect from "../../components/FlagSelect.astro";
 ---
 
 <PageLayout title="Steam Review Template">
   <header class="bg-slate-700 text-white py-2 flex flex-col items-center">
     <h1>{"---{ Review Template }---"}</h1>
-    <a href="/steam-review-template/es/" class="mt-0 text-white"
-      ><SpainFlag class="w-4 h-4" /></a
-    >
+    <FlagSelect />
     <p class="mt-0">☑ Awesome</p>
   </header>
 

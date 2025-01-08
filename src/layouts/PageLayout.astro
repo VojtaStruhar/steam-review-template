@@ -1,9 +1,12 @@
 ---
+import templates from "../review_templates/general";
+
 interface Props {
   title: string;
 }
-
 const { title } = Astro.props;
+
+let config_json = templates[Astro.currentLocale] || templates.en;
 ---
 
 <!doctype html>
@@ -23,13 +26,8 @@ const { title } = Astro.props;
   </head>
   <body>
     <slot />
-    <script lang="js">
+    <script lang="js" define:vars={{ config_json }}>
       var data = {};
-      const lang = window.location.href.split("/")[4];
-      const general_json = await import("../review_templates/general").then(
-        (m) => m.default,
-      );
-      const config_json = general_json[lang];
 
       function showOutput() {
         copyButton?.style.setProperty("display", "block");

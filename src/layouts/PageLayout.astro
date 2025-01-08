@@ -23,6 +23,78 @@ const { title } = Astro.props;
   </head>
   <body>
     <slot />
+    <script lang="js">
+      var data = {};
+      const lang = window.location.href.split("/")[4];
+      const general_json = await import("../review_templates/general").then(
+        (m) => m.default,
+      );
+      const config_json = general_json[lang];
+
+      function showOutput() {
+        copyButton?.style.setProperty("display", "block");
+        let output = document.getElementById("output");
+        if (output) {
+          output.innerHTML = "";
+          config_json.categories.forEach((category) => {
+            output.innerHTML += `\n---{ ${category.title} }---\n`;
+            category.options.forEach((item) => {
+              if (
+                category.type === "check" &&
+                data[category.title].includes(item)
+              ) {
+                output.innerHTML += `☑ ${item}\n`;
+              } else if (data[category.title] === item) {
+                output.innerHTML += `☑ ${item}\n`;
+              } else {
+                output.innerHTML += `☐ ${item}\n`;
+              }
+            });
+          });
+
+          output.innerHTML += `\n`;
+          output.innerHTML += `---{ ${config_json.author} }---\n`;
+          output.innerHTML += `☑ https://vojtastruhar.github.io/steam-review-template \n`;
+        }
+      }
+
+      let outputButton = document.getElementById("output-button");
+      if (outputButton) {
+        outputButton.addEventListener("click", showOutput);
+      }
+      let copyButton = document.getElementById("copy-output");
+      if (copyButton) {
+        copyButton.addEventListener("click", () => {
+          navigator.clipboard.writeText(
+            document.getElementById("output").innerText,
+          );
+        });
+      }
+      copyButton?.style.setProperty("display", "none");
+
+      [...document.getElementsByTagName("input")].forEach((input) => {
+        if (input.type == "checkbox") {
+          data[input.name] = [];
+        }
+        input.addEventListener("change", (event) => {
+          console.log("calling index.astro - L107:L128");
+          let target = event.target;
+          if (target) {
+            if (target.type == "checkbox") {
+              if (target.checked) {
+                data[target.name].push(target.value);
+              } else {
+                data[target.name] = data[target.name].filter(
+                  (item) => item != target.value,
+                );
+              }
+            } else {
+              data[target.name] = target.value;
+            }
+          }
+        });
+      });
+    </script>
   </body>
 </html>
 <style is:global>

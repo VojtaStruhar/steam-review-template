@@ -1,0 +1,82 @@
+---
+import config_json from "../../review_templates/template_en.json";
+import PageLayout from "../../layouts/PageLayout.astro";
+import OptionForm from "../../components/OptionForm.astro";
+import SpainFlag from "../../components/flags/SpainFlag.astro";
+---
+
+<PageLayout title="Steam Review Template">
+  <header class="bg-slate-700 text-white py-2 flex flex-col items-center">
+    <h1>{"---{ Review Template }---"}</h1>
+    <a href="/steam-review-template/es/" class="mt-0 text-white"
+      ><SpainFlag class="w-4 h-4" /></a
+    >
+    <p class="mt-0">☑ Awesome</p>
+  </header>
+
+  <div class="max-w-screen-sm mx-auto px-4">
+    <p>
+      This little tool simplifies the creation of copy-pasta Steam reviews (if
+      you are on this website, this <em>is</em> what you are looking for). I find
+      them moderately funny, so I made this website to avoid copy-pasting the copy
+      pasta so much.&nbsp;😆
+    </p>
+    <p>
+      The code is open source &rarr; <a
+        href="https://github.com/VojtaStruhar/steam-review-template"
+      >
+        check it out on Github</a
+      >!
+    </p>
+    <p>
+      The result generates with a line at the bottom that gives me credit.
+      Leaving it there is optional, but highly appreciated! Thanks!
+    </p>
+    {
+      config_json.categories.map((category) => (
+        <OptionForm category={category} />
+      ))
+    }
+    <div class="flex justify-center">
+      <button
+        id="output-button"
+        class="py-4 px-8 text-lg font-bold rounded-lg border-none shadow bg-amber-400 hover:cursor-pointer hover:shadow-lg transition-all"
+      >
+        Generate Steam Review!</button
+      >
+    </div>
+
+    <div class="flex justify-center mt-4">
+      <button
+        id="copy-output"
+        class="py-2 px-4 text-lg rounded-lg border-none shadow bg-sky-100 hover:cursor-pointer hover:shadow-lg transition-all"
+      >
+        Copy output</button
+      >
+    </div>
+
+    <pre id="output"></pre>
+  </div>
+
+  <footer class="bg-slate-700 text-white py-2 flex flex-col items-end">
+    <p class="px-8">
+      <a
+        href="https://www.vojtechstruhar.com"
+        target="_blank"
+        class="text-white">Vojtěch Struhár</a
+      >, 2021
+    </p>
+  </footer>
+</PageLayout>
+
+<style>
+  input[type="radio"],
+  input[type="checkbox"] {
+    transform: scale(1.25);
+  }
+
+  fieldset,
+  legend {
+    border: 1px solid #ccc;
+  }
+</style>

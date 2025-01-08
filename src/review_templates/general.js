@@ -1,7 +1,7 @@
-const english_template = await import('./template_en.json');
-const spanish_template = await import('./template_es.json');
+import english_template from "./template_en.json"
+import spanish_template from "./template_es.json"
 
 export default {
-  en: english_template.default,
-  es: spanish_template.default
+  en: english_template,
+  es: spanish_template
 }

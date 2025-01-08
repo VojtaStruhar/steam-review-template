@@ -18,11 +18,11 @@ const { title } = Astro.props;
   </head>
   <body>
     <slot />
-    <script>
+    <script lang="js">
       var data = {};
       const lang = window.location.href.split("/")[4];
       const general_json = await import("../review_templates/general").then(
-        (m) => m.default
+        (m) => m.default,
       );
       const config_json = general_json[lang];
 
@@ -61,7 +61,7 @@ const { title } = Astro.props;
       if (copyButton) {
         copyButton.addEventListener("click", () => {
           navigator.clipboard.writeText(
-            document.getElementById("output").innerText
+            document.getElementById("output").innerText,
           );
         });
       }
@@ -80,7 +80,7 @@ const { title } = Astro.props;
                 data[target.name].push(target.value);
               } else {
                 data[target.name] = data[target.name].filter(
-                  (item) => item != target.value
+                  (item) => item != target.value,
                 );
               }
             } else {

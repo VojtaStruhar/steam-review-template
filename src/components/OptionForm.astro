@@ -2,32 +2,41 @@
 const { category } = Astro.props;
 ---
 
-<form class="flex flex-col gap-2">
-  <fieldset class="rounded-lg my-4 shadow-md border bg-sky-100">
+<form class="mb-6">
+  <fieldset class="rounded-lg shadow-md border bg-white p-6">
     <legend
-      class="font-mono font-bold text-xl bg-emerald-300 px-4 rounded-lg shadow"
+        class="font-bold text-xl bg-gradient-to-r from-slate-800 to-slate-700 text-white px-4 py-2 rounded-full shadow"
     >
       {category.title}
     </legend>
-    {
-      category.options.map((item) => (
-        <>
-          {category.type == "radio" ? (
-            <input type="radio" id={item} name={category.title} value={item} />
-          ) : (
-            <input
-              type="checkbox"
-              id={item}
-              name={category.title}
-              value={item}
-            />
-          )}
-          <label class="mx-2" for={item}>
-            {item}
-          </label>
-          <br />
-        </>
-      ))
-    }
+    <div class="mt-4 space-y-2">
+      {
+        category.options.map((item) => (
+            <div class="flex items-center">
+              {category.type == "radio" ? (
+                  <input
+                      type="radio"
+                      id={item}
+                      name={category.title}
+                      value={item}
+                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500"
+                  />
+              ) : (
+                  <input
+                      type="checkbox"
+                      id={item}
+                      name={category.title}
+                      value={item}
+                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
+                  />
+              )}
+              <label class="ml-2 text-sm font-medium text-gray-700" for={item}>
+                {item}
+              </label>
+            </div>
+        ))
+      }
+    </div>
   </fieldset>
 </form>
+

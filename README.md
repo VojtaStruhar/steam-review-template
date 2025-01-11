@@ -29,6 +29,6 @@ It's heartwarming to see contributors adding their own languages! To make it a l
 1. Add your language code to the `locales` array in Astro config.
 2. Add new template translation to in `src/review_templates` and export it in `src/review_templates/general.js`.
 3. Add new `index.astro` translation to a folder with your language code.
-4. Add your flag emoji to the `FlagSelect.astro` component.
+4. Add your flag to the `FlagSelect.astro` component.
 
 You are officially awesome! ✅

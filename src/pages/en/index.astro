@@ -6,63 +6,61 @@ import FlagSelect from "../../components/FlagSelect.astro";
 ---
 
 <PageLayout title="Steam Review Template">
-  <header class="bg-slate-700 text-white py-2 flex flex-col items-center">
-    <h1>{"---{ Review Template }---"}</h1>
+  <header class="bg-gradient-to-r from-slate-800 to-slate-700 text-white py-6 flex flex-col items-center">
+    <h1 class="text-3xl font-bold mb-4">
+      Steam Review Creator
+    </h1>
     <FlagSelect />
-    <p class="mt-0">☑ Awesome</p>
+    <p class="mt-2 text-lg">Create awesome reviews with ease</p>
   </header>
 
-  <div class="max-w-screen-sm mx-auto px-4">
-    <p>
-      This little tool simplifies the creation of copy-pasta Steam reviews (if
-      you are on this website, this <em>is</em> what you are looking for). I find
-      them moderately funny, so I made this website to avoid copy-pasting the copy
-      pasta so much.&nbsp;😆
-    </p>
-    <p>
-      The code is open source &rarr; <a
-        href="https://github.com/VojtaStruhar/steam-review-template"
+  <main class="max-w-3xl mx-auto px-4 py-8">
+    <div class="bg-white shadow-lg rounded-lg p-6 mb-8">
+      <p class="mb-4">
+        This tool simplifies the creation of copy-pasta Steam reviews. If you're here, this is exactly what you're looking for! I find them moderately funny, so I made this website to avoid copy-pasting the copy pasta so much. 😆
+      </p>
+      <p class="mb-4">
+        The code is open source → <a
+          target="_blank"
+          href="https://github.com/VojtaStruhar/steam-review-template"
+          class="text-blue-600 hover:underline"
       >
-        check it out on Github</a
-      >!
-    </p>
-    <p>
-      The result generates with a line at the bottom that gives me credit.
-      Leaving it there is optional, but highly appreciated! Thanks!
-    </p>
-    {
-      config_json.categories.map((category) => (
-        <OptionForm category={category} />
-      ))
-    }
-    <div class="flex justify-center">
-      <button
-        id="output-button"
-        class="py-4 px-8 text-lg font-bold rounded-lg border-none shadow bg-amber-400 hover:cursor-pointer hover:shadow-lg transition-all"
-      >
-        Generate Steam Review!</button
-      >
+        check it out on Github</a>!
+      </p>
+      <p>
+        The result generates with a line at the bottom that gives me credit. Leaving it there is optional, but highly appreciated! Thanks!
+      </p>
     </div>
 
-    <div class="flex justify-center mt-4">
+    {
+      config_json.categories.map((category) => (
+          <OptionForm category={category} />
+      ))
+    }
+
+    <div class="flex flex-col items-center gap-4 mt-8">
       <button
-        id="copy-output"
-        class="py-2 px-4 text-lg rounded-lg border-none shadow bg-sky-100 hover:cursor-pointer hover:shadow-lg transition-all"
+          id="output-button"
+          class="cursor-pointer py-3 px-6 text-lg font-bold rounded-full bg-slate-600 text-white hover:shadow-lg transition-all border-none"
       >
-        Copy output</button
+        Generate Steam Review
+      </button>
+
+      <button
+          id="copy-output"
+          class="cursor-pointer py-2 px-4 text-lg rounded-full bg-sky-100 hover:bg-sky-200 transition-all border-none drop-shadow-lg"
       >
+        Copy output
+      </button>
     </div>
-  </div>
+
+    <pre id="output" class="mt-8 p-4 bg-gray-100 rounded-lg overflow-x-auto"></pre>
+  </main>
 </PageLayout>
 
 <style>
   input[type="radio"],
   input[type="checkbox"] {
-    transform: scale(1.25);
-  }
-
-  fieldset,
-  legend {
-    border: 1px solid #ccc;
+    @apply w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500;
   }
 </style>

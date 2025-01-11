@@ -5,64 +5,66 @@ import OptionForm from "../../components/OptionForm.astro";
 import FlagSelect from "../../components/FlagSelect.astro";
 ---
 
-<PageLayout title="Plantilla de reseñas de steam">
-  <header class="bg-slate-700 text-white py-2 flex flex-col items-center">
-    <h1>{"---{ Plantilla para reseñas }---"}</h1>
-    <FlagSelect />
-    <p class="mt-0">☑ Asombroso</p>
-  </header>
+<PageLayout title="Steam Review Template">
+    <header class="bg-gradient-to-r from-slate-800 to-slate-700 text-white py-6 flex flex-col items-center">
+        <h1 class="text-3xl font-bold mb-4">
+            Creador de revisiones de Steam
+        </h1>
+        <FlagSelect />
+        <p class="mt-2 text-lg">Crea reseñas increíbles con facilidad</p>
+    </header>
 
-  <div class="max-w-screen-sm mx-auto px-4">
-    <p>
-      Esta pequeña herramienta simplifica la creación de reseñas de Steam de
-      copiar y pegar (si estás en este sitio web, esto es lo que estás
-      buscando). Las encuentro moderadamente graciosas, así que hice este sitio
-      web para evitar copiar y pegar tanto.&nbsp;😆
-    </p>
-    <p>
-      Es de código abierto! &rarr; <a
-        href="https://github.com/VojtaStruhar/steam-review-template"
-      >
-        revisalo en Github</a
-      >!
-    </p>
-    <p>
-      El resultado genera una línea en la parte inferior que me da crédito.
-      Dejarla ahí es opcional, ¡pero altamente apreciado! ¡Gracias!
-    </p>
-    {
-      config_json.categories.map((category) => (
-        <OptionForm category={category} />
-      ))
-    }
-    <div class="flex justify-center">
-      <button
-        id="output-button"
-        class="py-4 px-8 text-lg font-bold rounded-lg border-none shadow bg-amber-400 hover:cursor-pointer hover:shadow-lg transition-all"
-      >
-        Generar reseña de Steam!</button
-      >
-    </div>
+    <main class="max-w-3xl mx-auto px-4 py-8">
+        <div class="bg-white shadow-lg rounded-lg p-6 mb-8">
+            <p class="mb-4">
+                Esta pequeña herramienta simplifica la creación de reseñas de Steam de
+                copiar y pegar (si estás en este sitio web, esto es lo que estás
+                buscando). Las encuentro moderadamente graciosas, así que hice este sitio
+                web para evitar copiar y pegar tanto.&nbsp;😆
+            </p>
+            <p class="mb-4">
+                Es de código abierto! → <a
+					target="_blank"
+                    href="https://github.com/VojtaStruhar/steam-review-template"
+                    class="text-blue-600 hover:underline"
+            >
+                revisalo en Github</a>!
+            </p>
+            <p>
+                El resultado genera una línea en la parte inferior que me da crédito.
+                Dejarla ahí es opcional, ¡pero altamente apreciado! ¡Gracias!
+            </p>
+        </div>
 
-    <div class="flex justify-center mt-4">
-      <button
-        id="copy-output"
-        class="py-2 px-4 text-lg rounded-lg border-none shadow bg-sky-100 hover:cursor-pointer hover:shadow-lg transition-all"
-      >
-        Copiar el resultado</button
-      >
-    </div>
-  </div>
+		{
+			config_json.categories.map((category) => (
+                    <OptionForm category={category} />
+			))
+		}
+
+        <div class="flex flex-col items-center gap-4 mt-8">
+            <button
+                    id="output-button"
+                    class="cursor-pointer py-3 px-6 text-lg font-bold rounded-full bg-slate-600 text-white hover:shadow-lg transition-all border-none"
+            >
+                Generar reseña de Steam!
+            </button>
+
+            <button
+                    id="copy-output"
+                    class="cursor-pointer py-2 px-4 text-lg rounded-full bg-sky-100 hover:bg-sky-200 transition-all border-none drop-shadow-lg"
+            >
+                Copiar el resultado
+            </button>
+        </div>
+
+        <pre id="output" class="mt-8 p-4 bg-gray-100 rounded-lg overflow-x-auto"></pre>
+    </main>
 </PageLayout>
 
 <style>
-  input[type="radio"],
-  input[type="checkbox"] {
-    transform: scale(1.25);
-  }
-
-  fieldset,
-  legend {
-    border: 1px solid #ccc;
-  }
+    input[type="radio"],
+    input[type="checkbox"] {
+        @apply w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500;
+    }
 </style>

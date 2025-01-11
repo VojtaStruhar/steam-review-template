@@ -1,24 +1,38 @@
 ---
+import 'flag-icons/css/flag-icons.min.css';
+
 let lang = Astro.currentLocale;
 let descriptions = [
-    { code: "en", flag: "🇬🇧" },
-    { code: "es", flag: "🇪🇸" },
+	{ code: "en", name: "English", flag: "gb" },
+	{ code: "es", name: "Español", flag: "es" },
 ];
 ---
 
-<div class="flex gap-4 text-3xl mb-4">
-    {
-        descriptions.map((data) => (
-            <a
-                href={"/steam-review-template/" + data.code}
-                class:list={[
-                    data.code == lang && "outline",
-                    "rounded no-underline text-white",
-                    "hover:bg-white hover:bg-opacity-20",
-                ]}
-            >
-                {data.flag}
-            </a>
-        ))
-    }
+<div class="flex gap-4 mb-4">
+	{
+		descriptions.map((data) => (
+                <a
+                        href={"/steam-review-template/" + data.code}
+                        class:list={[
+							"items-center gap-2 px-3 py-2 rounded-full transition-all",
+							data.code == lang
+								? "bg-white"
+								: "hover:bg-white",
+						]}
+                        aria-label={`Switch to ${data.name}`}
+                >
+                    <span class={`fi fi-${data.flag} rounded-sm`}></span>
+                </a>
+		))
+	}
 </div>
+
+<style>
+   	.flag-icon {
+		width: 1.5em;
+		height: 1.5em;
+	}
+	.fi {
+		font-size: 1.5em;
+	}
+</style>

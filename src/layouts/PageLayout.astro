@@ -11,130 +11,120 @@ let config_json = templates[Astro.currentLocale] || templates.en;
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
-    <link
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Steam Review Template Generator" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
       rel="icon"
       type="image/svg+xml"
       href={"/steam-review-template/favicon.svg"}
-    />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="sitemap" href="/steam-review-template/sitemap-index.xml" />
-    <title>{title}</title>
-    <script
+  />
+  <meta name="generator" content={Astro.generator} />
+  <link rel="sitemap" href="/steam-review-template/sitemap-index.xml" />
+  <title>{title}</title>
+  <script
       defer
       data-domain="vojtastruhar.github.io/steam-review-template"
       src="https://analytics.vojtechstruhar.com/js/script.outbound-links.tagged-events.js"
-    ></script>
+  ></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   </head>
-  <body>
-    <slot />
+  <body class="bg-gray-50 min-h-screen flex flex-col">
+  <slot />
 
-    <div class="max-w-screen-sm mx-auto px-4">
-      <pre id="output"></pre>
-    </div>
-    <footer class="bg-slate-700 text-white py-2 flex flex-col items-end">
-      <p class="px-8">
-        <a
-          href="https://www.vojtechstruhar.com"
-          target="_blank"
-          class="text-white">Vojtěch Struhár</a
-        >, 2021
-      </p>
-    </footer>
+  <footer class="bg-gradient-to-r from-slate-800 to-slate-700 text-white py-4 mt-auto">
+  <div class="max-w-3xl mx-auto px-4 flex justify-between items-center">
+  <p>&copy; 2021-{new Date().getFullYear()} Vojtěch Struhár</p>
+  <p>
+  Created by <a
+  href="https://www.vojtechstruhar.com"
+  target="_blank"
+  class="text-white hover:underline">Vojtěch Struhár</a>
+  </p>
+  </div>
+  </footer>
   </body>
-</html>
-<script lang="js" define:vars={{ config_json }}>
+  </html>
+
+  <script lang="js" define:vars={{ config_json }}>
   var data = {};
 
   function showOutput() {
-    copyButton?.style.setProperty("display", "block");
-    let output = document.getElementById("output");
-    if (output) {
-      output.innerHTML = "";
-      config_json.categories.forEach((category) => {
-        output.innerHTML += `\n---{ ${category.title} }---\n`;
-        category.options.forEach((item) => {
-          if (
+  const copyButton = document.getElementById("copy-output");
+  copyButton?.classList.remove("hidden");
+  let output = document.getElementById("output");
+  if (output) {
+    output.innerHTML = "";
+    config_json.categories.forEach((category) => {
+      output.innerHTML += `\n---{ ${category.title} }---\n`;
+      category.options.forEach((item) => {
+        if (
             category.type === "check" &&
-            data[category.title].includes(item)
-          ) {
-            output.innerHTML += `☑ ${item}\n`;
-          } else if (data[category.title] === item) {
-            output.innerHTML += `☑ ${item}\n`;
-          } else {
-            output.innerHTML += `☐ ${item}\n`;
-          }
-        });
+            data[category.title]?.includes(item)
+        ) {
+          output.innerHTML += `☑ ${item}\n`;
+        } else if (data[category.title] === item) {
+          output.innerHTML += `☑ ${item}\n`;
+        } else {
+          output.innerHTML += `☐ ${item}\n`;
+        }
       });
+    });
 
-      output.innerHTML += `\n`;
-      output.innerHTML += `---{ ${config_json.author} }---\n`;
-      output.innerHTML += `☑ https://vojtastruhar.github.io/steam-review-template \n`;
-    }
+    output.innerHTML += `\n`;
+    output.innerHTML += `---{ ${config_json.author} }---\n`;
+    output.innerHTML += `☑ https://vojtastruhar.github.io/steam-review-template \n`;
   }
+}
 
   let outputButton = document.getElementById("output-button");
   if (outputButton) {
-    outputButton.addEventListener("click", showOutput);
-  }
+  outputButton.addEventListener("click", showOutput);
+}
   let copyButton = document.getElementById("copy-output");
   if (copyButton) {
-    copyButton.addEventListener("click", () => {
-      navigator.clipboard.writeText(
+  copyButton.addEventListener("click", () => {
+    navigator.clipboard.writeText(
         document.getElementById("output").innerText,
-      );
-    });
-  }
-  copyButton?.style.setProperty("display", "none");
+    );
+  });
+}
+  copyButton?.classList.add("hidden");
 
   [...document.getElementsByTagName("input")].forEach((input) => {
-    if (input.type == "checkbox") {
-      data[input.name] = [];
-    }
-    input.addEventListener("change", (event) => {
-      console.log("calling index.astro - L107:L128");
-      let target = event.target;
-      if (target) {
-        if (target.type == "checkbox") {
-          if (target.checked) {
-            data[target.name].push(target.value);
-          } else {
-            data[target.name] = data[target.name].filter(
-              (item) => item != target.value,
-            );
-          }
+  if (input.type == "checkbox") {
+    data[input.name] = [];
+  }
+  input.addEventListener("change", (event) => {
+    let target = event.target;
+    if (target) {
+      if (target.type == "checkbox") {
+        if (target.checked) {
+          data[target.name] = data[target.name] || [];
+          data[target.name].push(target.value);
         } else {
-          data[target.name] = target.value;
+          data[target.name] = data[target.name].filter(
+              (item) => item != target.value,
+          );
         }
+      } else {
+        data[target.name] = target.value;
       }
-    });
+    }
   });
-</script>
+});
+  </script>
 
-<style is:global>
+  <style is:global>
   body {
+    padding: 0;
     margin: 0;
-    font-family: system-ui, sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     line-height: 1.5;
-    min-height: 100vh;
-    background: #fff;
-    color: #000;
-  }
-  html {
-    font-family: system-ui, sans-serif;
-  }
-  code {
-    font-family:
-      Menlo,
-      Monaco,
-      Lucida Console,
-      Liberation Mono,
-      DejaVu Sans Mono,
-      Bitstream Vera Sans Mono,
-      Courier New,
-      monospace;
-  }
-</style>
+  color: #333;
+}
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+}
+  </style>

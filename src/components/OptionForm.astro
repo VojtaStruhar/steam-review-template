@@ -1,10 +1,12 @@
 ---
-const { category } = Astro.props;
+const { category, index } = Astro.props;
 ---
 
 <form class="flex flex-col gap-2">
-  <fieldset class="rounded-lg my-4 shadow-md border bg-sky-100">
+  <fieldset id={`field-${index}`} data-field-index={index} class="rounded-lg my-4 shadow-md border bg-sky-100">
     <legend
+      id={`legend-${index}`}
+      data-legend-index={index}
       class="font-mono font-bold text-xl bg-emerald-300 px-4 rounded-lg shadow"
     >
       {category.title}
@@ -29,5 +31,6 @@ const { category } = Astro.props;
         </>
       ))
     }
+    <button id={`hide-toggle-${index}`} data-category={index} class="text-white font-semibold rounded border-none px-2 py-1 mt-2 bg-red-400" type="button">Hide</button>
   </fieldset>
 </form>

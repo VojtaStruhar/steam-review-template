@@ -55,6 +55,9 @@ let config_json = templates[Astro.currentLocale] || templates.en;
     if (output) {
       output.innerHTML = "";
       config_json.categories.forEach((category) => {
+        if (category.hidden) {
+          return;
+        }
         output.innerHTML += `\n---{ ${category.title} }---\n`;
         category.options.forEach((item) => {
           if (
@@ -112,6 +115,28 @@ let config_json = templates[Astro.currentLocale] || templates.en;
       }
     });
   });
+
+  config_json.categories.forEach((category, index) => {
+    const categoryLegend = document.getElementById(`legend-${index}`);
+    const toggleButton = document.getElementById(`hide-toggle-${index}`)
+    const categotyOptionItems = document.querySelectorAll(`#legend-${index} ~ *:not(#hide-toggle-${index})`)
+    
+    toggleButton?.addEventListener('click', () => {
+      category.hidden = !category.hidden;
+    
+      toggleButton.innerText = category.hidden ? 'Show' : 'Hide';
+      
+      toggleButton.classList.toggle('bg-red-400');
+      toggleButton.classList.toggle('bg-gray-400');
+      
+      categoryLegend.classList.toggle('bg-emerald-300')
+      categoryLegend.classList.toggle('bg-gray-400')
+    
+      categotyOptionItems.forEach((item) => {
+        item.classList.toggle('hidden');
+      });
+    });
+  })
 </script>
 
 <style is:global>

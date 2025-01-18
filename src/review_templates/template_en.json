@@ -5,6 +5,7 @@
         {
             "title": "Graphics",
             "type": "radio",
+            "hidden": false,
             "options": [
                 "You forget what reality is",
                 "Beautiful",
@@ -18,6 +19,7 @@
         {
             "title": "Gameplay",
             "type": "radio",
+            "hidden": false,
             "options": [
                 "Very good",
                 "Good",
@@ -30,6 +32,7 @@
         {
             "title": "Audio",
             "type": "radio",
+            "hidden": false,
             "options": [
                 "Eargasm",
                 "Very good",
@@ -42,6 +45,7 @@
         {
             "title": "Audience",
             "type": "check",
+            "hidden": false,
             "options": [
                 "Kids",
                 "Teens",
@@ -52,6 +56,7 @@
         {
             "title": "PC Requirements",
             "type": "radio",
+            "hidden": false,
             "options": [
                 "Check if you can run paint",
                 "Potato",
@@ -64,6 +69,7 @@
         {
             "title": "Game Size",
             "type": "radio",
+            "hidden": false,
             "options": [
               "Floppy Disk",
               "Old Fashioned",
@@ -77,6 +83,7 @@
         {
             "title": "Difficulty",
             "type": "radio",
+            "hidden": false,
             "options": [
                 "Just press 'W'",
                 "Easy",
@@ -89,6 +96,7 @@
         {
             "title": "Grind",
             "type": "radio",
+            "hidden": false,
             "options": [
                 "Nothing to grind",
                 "Only if u care about leaderboards/ranks",
@@ -101,6 +109,7 @@
         {
             "title": "Story",
             "type": "radio",
+            "hidden": false,
             "options": [
                 "No Story",
                 "Some lore",
@@ -113,6 +122,7 @@
         {
             "title": "Game Time",
             "type": "radio",
+            "hidden": false,
             "options": [
                 "Long enough for a cup of coffee",
                 "Short",
@@ -124,6 +134,7 @@
         {
             "title": "Price",
             "type": "radio",
+            "hidden": false,
             "options": [
                 "It's free!",
                 "Worth the price",
@@ -136,6 +147,7 @@
         {
             "title": "Bugs",
             "type": "radio",
+            "hidden": false,
             "options": [
                 "Never heard of",
                 "Minor bugs",
@@ -147,6 +159,7 @@
         {
             "title": "? / 10",
             "type": "radio",
+            "hidden": false,
             "options": [
                 "1",
                 "2",

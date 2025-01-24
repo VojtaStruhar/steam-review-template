@@ -54,7 +54,10 @@ let config_json = templates[Astro.currentLocale] || templates.en;
     let output = document.getElementById("output");
     if (output) {
       output.innerHTML = "";
-      config_json.categories.forEach((category) => {
+      config_json.categories.forEach((category, index) => {
+        if (document.getElementById(`field-${index}`).getAttribute('data-hidden') === 'true') {
+          return;
+        }
         output.innerHTML += `\n---{ ${category.title} }---\n`;
         category.options.forEach((item) => {
           if (
@@ -112,6 +115,25 @@ let config_json = templates[Astro.currentLocale] || templates.en;
       }
     });
   });
+
+  config_json.categories.forEach((category, index) => {
+    const categoryFieldset = document.getElementById(`field-${index}`);
+    const categoryLegend = document.getElementById(`legend-${index}`);
+    const toggleButton = document.getElementById(`hide-toggle-${index}`)
+    
+    toggleButton?.addEventListener('click', () => {
+      const isHidden = categoryFieldset.getAttribute('data-hidden') === 'true';
+      
+      categoryFieldset.setAttribute('data-hidden', !isHidden);
+      toggleButton.innerText = isHidden ? 'Hide' : 'Show';
+      
+      toggleButton.classList.toggle('bg-red-400');
+      toggleButton.classList.toggle('bg-gray-400');
+      
+      categoryLegend.classList.toggle('bg-emerald-300')
+      categoryLegend.classList.toggle('bg-gray-400')
+    });
+  })
 </script>
 
 <style is:global>

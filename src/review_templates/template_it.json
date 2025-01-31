@@ -1,0 +1,164 @@
+{
+    "name": "Template",
+    "author": "Author",
+    "categories": [
+        {
+            "title": "Grafica",
+            "type": "radio",
+            "options": [
+                "Meglio del mondo reale",
+                "Bellissima",
+                "Bella",
+                "Decente",
+                "Brutta",
+                "Pessima",
+                "Pong"
+            ]
+        },
+        {
+            "title": "Gameplay",
+            "type": "radio",
+            "options": [
+                "Ottimo",
+                "Buon gameplay",
+                "Normale, solito gameplay",
+                "Mediocre",
+                "'Che pizza!'",
+                "Pallosissimo"
+            ]
+        },
+        {
+            "title": "Comparto sonoro",
+            "type": "radio",
+            "options": [
+                "Da orgasmo",
+                "Molto buono",
+                "Buono",
+                "Accettabile",
+                "Insufficiente",
+                "Sono diventato sordo"
+            ]
+        },
+        {
+            "title": "Pubblico di riferimento",
+            "type": "check",
+            "options": [
+                "Bambini",
+                "Ragazzi",
+                "Adulti",
+                "Mia nonna"
+            ]
+        },
+        {
+            "title": "Requisiti Hardware",
+            "type": "radio",
+            "options": [
+                "Calcolatrice",
+                "Fascia bassa",
+                "Fascia media",
+                "Fascia alta",
+                "Top di gamma",
+                "Computer della NASA"
+            ]
+        },
+        {
+            "title": "Dimensioni del gioco",
+            "type": "radio",
+            "options": [
+              "Floppy Disk",
+              "Retrogame",
+              "Normale",
+              "Grande",
+              "Userà il 10% del tuo hard disk da 1TB",
+              "Avrai bisogno di un intero disco nuovo",
+              "Dovrai creare un buco nero per contenere tutti questi dati"
+            ]
+          },          
+        {
+            "title": "Difficoltà",
+            "type": "radio",
+            "options": [
+                "Devi solo premere 'W'",
+                "Facile",
+                "Facile da imparare ma difficile da padroneggiare",
+                "Richiede un buon cervello",
+                "Difficile",
+                "Dark Souls"
+            ]
+        },
+        {
+            "title": "Grinding",
+            "type": "radio",
+            "options": [
+                "Niente grinding",
+                "Solo se ti interessano le classifiche o gli achievement di Steam",
+                "Non richiesto per andare avanti col gioco",
+                "Grinding normale",
+                "Troppo grinding",
+                "Addio vita sociale"
+            ]
+        },
+        {
+            "title": "Storia",
+            "type": "radio",
+            "options": [
+                "Quale storia?",
+                "C'è della lore",
+                "Nella media",
+                "Buona",
+                "Notevole",
+                "Te la ricorderai per tutta la vita"
+            ]
+        },
+        {
+            "title": "Longevità",
+            "type": "radio",
+            "options": [
+                "Dura il giusto per una pausa caffè",
+                "Breve",
+                "Media",
+                "Lunga",
+                "Verso l'infinito e oltre!"
+            ]
+        },
+        {
+            "title": "Prezzo",
+            "type": "radio",
+            "options": [
+                "Gratis!",
+                "Vale quello che costa",
+                "Solo se in sconto",
+                "Se proprio ti avanzano dei soldi...",
+                "Non consigliato a questo prezzo",
+                "Tanto valeva bruciare quel denaro"
+            ]
+        },
+        {
+            "title": "Bug",
+            "type": "radio",
+            "options": [
+                "Mai visto niente del genere",
+                "Piccoli bug",
+                "Ok, c'è qualcosa ogni tanto",
+                "ARK: Survival Evolved",
+                "Il gioco stesso è un nido di insetti"
+            ]
+        },
+        {
+            "title": "? / 10",
+            "type": "radio",
+            "options": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,68 @@
+---
+import config_json from "../../review_templates/template_it.json";
+import PageLayout from "../../layouts/PageLayout.astro";
+import OptionForm from "../../components/OptionForm.astro";
+import FlagSelect from "../../components/FlagSelect.astro";
+---
+
+<PageLayout title="Template recensione Steam">
+  <header class="bg-slate-700 text-white py-2 flex flex-col items-center">
+    <h1>{"---{ Template recensione }---"}</h1>
+    <FlagSelect />
+    <p class="mt-0">☑ Eccezionale</p>
+  </header>
+
+  <div class="max-w-screen-sm mx-auto px-4">
+    <p>
+      Questo tool semplifica la creazione di recensioni Steam da copincollare (se sei
+      arrivato qui, allora <em>questo<em> è ciò che stai cercando). Io le trovo
+      piuttosto divertenti, quindi ho creato questo sito web per evitare di copiare e
+      incollare così tanto il copia-incolla.&nbsp;😆
+    </p>
+    <p>
+      Il codice è open source &rarr; <a
+        href="https://github.com/VojtaStruhar/steam-review-template"
+      >
+        guardalo su Github</a
+      >!
+    </p>
+    <p>
+      Il risultato viene generato includendo una riga in fondo per i crediti.
+      Lasciarla è opzionale, ma molto apprezzato! Grazie!
+    </p>
+    {
+      config_json.categories.map((category) => (
+        <OptionForm category={category} />
+      ))
+    }
+    <div class="flex justify-center">
+      <button
+        id="output-button"
+        class="py-4 px-8 text-lg font-bold rounded-lg border-none shadow bg-amber-400 hover:cursor-pointer hover:shadow-lg transition-all"
+      >
+        Genera recensione Steam!</button
+      >
+    </div>
+
+    <div class="flex justify-center mt-4">
+      <button
+        id="copy-output"
+        class="py-2 px-4 text-lg rounded-lg border-none shadow bg-sky-100 hover:cursor-pointer hover:shadow-lg transition-all"
+      >
+        Copy output</button
+      >
+    </div>
+  </div>
+</PageLayout>
+
+<style>
+  input[type="radio"],
+  input[type="checkbox"] {
+    transform: scale(1.25);
+  }
+
+  fieldset,
+  legend {
+    border: 1px solid #ccc;
+  }
+</style>

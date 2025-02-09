@@ -1,0 +1,66 @@
+---
+import config_json from "../../review_templates/template_de.json";
+import PageLayout from "../../layouts/PageLayout.astro";
+import OptionForm from "../../components/OptionForm.astro";
+import FlagSelect from "../../components/FlagSelect.astro";
+---
+
+<PageLayout title="Steam-Review-Vorlage">
+  <header class="bg-slate-700 text-white py-2 flex flex-col items-center">
+    <h1>{"---{ Review-Vorlage }---"}</h1>
+    <FlagSelect />
+    <p class="mt-0">☑ Fantastisch</p>
+  </header>
+
+  <div class="max-w-screen-sm mx-auto px-4">
+    <p>
+      Dieses kleine Tool vereinfacht das Erstellen von Copy-Pasta Steam-Reviews (wenn du auf dieser Website bist, dann <em>suchst</em> du genau das). Ich finde sie mäßig lustig, also habe ich diese Website erstellt, um nicht ständig Copy-Pasta kopieren zu müssen.&nbsp;😆
+    </p>
+    <p>
+      Der Code ist Open Source &rarr; <a
+        href="https://github.com/VojtaStruhar/steam-review-template"
+      >
+        Schau es dir auf GitHub an
+		
+		Deutsche Übersetzung von OsakaPhysics :)</a
+      >!
+    </p>
+    <p>
+      Das Ergebnis enthält eine Zeile am Ende, die mir Credits gibt. Das Entfernen ist optional, aber sehr geschätzt! Danke!
+    </p>
+    {
+      config_json.categories.map((category) => (
+        <OptionForm category={category} />
+      ))
+    }
+    <div class="flex justify-center">
+      <button
+        id="output-button"
+        class="py-4 px-8 text-lg font-bold rounded-lg border-none shadow bg-amber-400 hover:cursor-pointer hover:shadow-lg transition-all"
+      >
+        Steam-Review generieren!</button
+      >
+    </div>
+
+    <div class="flex justify-center mt-4">
+      <button
+        id="copy-output"
+        class="py-2 px-4 text-lg rounded-lg border-none shadow bg-sky-100 hover:cursor-pointer hover:shadow-lg transition-all"
+      >
+        Ausgabe kopieren</button
+      >
+    </div>
+  </div>
+</PageLayout>
+
+<style>
+  input[type="radio"],
+  input[type="checkbox"] {
+    transform: scale(1.25);
+  }
+
+  fieldset,
+  legend {
+    border: 1px solid #ccc;
+  }
+</style>

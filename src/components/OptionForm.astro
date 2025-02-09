@@ -4,30 +4,19 @@ const { category } = Astro.props;
 
 <form class="flex flex-col gap-2">
   <fieldset class="rounded-lg my-4 shadow-md border bg-sky-100">
-    <legend
-      class="font-mono font-bold text-xl bg-emerald-300 px-4 rounded-lg shadow"
-    >
+    <legend class="font-mono font-bold text-xl bg-emerald-300 px-4 rounded-lg shadow">
       {category.title}
     </legend>
-    {
-      category.options.map((item) => (
-        <>
-          {category.type == "radio" ? (
-            <input type="radio" id={item} name={category.title} value={item} />
-          ) : (
-            <input
-              type="checkbox"
-              id={item}
-              name={category.title}
-              value={item}
-            />
-          )}
-          <label class="mx-2" for={item}>
-            {item}
-          </label>
-          <br />
-        </>
-      ))
-    }
+    {category.options.map((item) => (
+      <div> <!-- Wrapped inside a div to fix JSX fragment issue -->
+        <input 
+          type={category.type === "radio" ? "radio" : "checkbox"} 
+          id={item} 
+          name={category.title} 
+          value={item} 
+        />
+        <label class="mx-2" for={item}>{item}</label>
+      </div>
+    ))}
   </fieldset>
 </form>

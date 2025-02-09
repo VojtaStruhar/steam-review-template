@@ -1,0 +1,164 @@
+{
+    "name": "Template",
+    "author": "Author",
+    "categories": [
+        {
+            "title": "Grafik",
+            "type": "radio",
+            "options": [
+                "Du vergisst was Realität ist",
+                "Wunderschön",
+                "Gut",
+                "Anständig",
+                "Schlecht",
+                "Kuck es nicht zu lange an",
+                "MS-DOS"
+            ]
+        },
+        {
+            "title": "Gameplay",
+            "type": "radio",
+            "options": [
+                "Sehr gut",
+                "Schön",
+                "Es ist nur Gameplay",
+                "Mehh",
+                "Kuck dir Farbe beim trocknen an",
+                "Einfach Nein"
+            ]
+        },
+        {
+            "title": "Audio",
+            "type": "radio",
+            "options": [
+                "Ohrengasmus",
+                "Sehr gut",
+                "Gut",
+                "Nicht zu schlecht",
+                "Schlecht",
+                "Ich bin jetzt Taub"
+            ]
+        },
+        {
+            "title": "Zielgruppe",
+            "type": "check",
+            "options": [
+                "Kinder",
+                "Teens",
+                "Erwachsene",
+                "Oma"
+            ]
+        },
+        {
+            "title": "PC Herrauforderung",
+            "type": "radio",
+            "options": [
+                "Checke ob es MS Paint öffnen kann",
+                "Kartoffel",
+                "Decent",
+                "Schnell",
+                "Reicher Junge",
+                "Frag NASA ob sie dir einen Supercomputer leihen"
+            ]
+        },
+        {
+            "title": "Spiel Größe",
+            "type": "radio",
+            "options": [
+              "Floppy Disk",
+              "Alte Größe",
+              "Okay",
+              "Groß",
+              "Wird 10% von ein Terrabyte Festplatte brauchen",
+              "Du brauchst eine ganze Festplatte für das Spiel",
+              "Du brauchst ein Schwarzes Loch für das Spiel"
+            ]
+          },          
+        {
+            "title": "Schwerigkeit",
+            "type": "radio",
+            "options": [
+                "Einfach nur 'W' drücken",
+                "Leicht",
+                "Leicht zu Lernen, schwer zu meistern",
+                "Sehr viel Gehirn benutzung",
+                "Schwer",
+                "Dark Souls 2.0"
+            ]
+        },
+        {
+            "title": "Grinden",
+            "type": "radio",
+            "options": [
+                "Nichts zum Grinden",
+                "Nur falls du die Rankliste brauchst.",
+                "Nicht Notwendig",
+                "Normales Grinden",
+                "Zu Viel Grinden",
+                "Du brauchst ein neues Leben zum Grinden"
+            ]
+        },
+        {
+            "title": "Story",
+            "type": "radio",
+            "options": [
+                "Keine Story",
+                "Ein Bisschen",
+                "Normal",
+                "Gut",
+                "Liebbar",
+                "Es wird dein Leben verändern"
+            ]
+        },
+        {
+            "title": "Spielzeit",
+            "type": "radio",
+            "options": [
+                "Lang genug für eine Tasse Tee",
+                "Kurz",
+                "Normal",
+                "Lang",
+                "Zur Unendlichkeit und noch weiter"
+            ]
+        },
+        {
+            "title": "Preiß",
+            "type": "radio",
+            "options": [
+                "Kostenlos!",
+                "Preiß wert",
+                "Nur wenn es auf Sale ist.",
+                "Falls du noch ein bisschen Geld hast",
+                "Nein, Einfach Nein.",
+                "Du kannst auch Kohle verbrennen"
+            ]
+        },
+        {
+            "title": "Glitche",
+            "type": "radio",
+            "options": [
+                "Keine Glitche",
+                "Ein paar",
+                "Wird Nervend",
+                "ARK: Survival",
+                "Glitch Hölle."
+            ]
+        },
+        {
+            "title": "? / 10",
+            "type": "radio",
+            "options": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10"
+            ]
+        }
+    ]
+}

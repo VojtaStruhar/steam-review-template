@@ -6,7 +6,7 @@ name: Generate languages
 on:
   push:
     branches:
-      - feature-language-actions
+      - master
     
 
 jobs:
@@ -33,4 +33,4 @@ jobs:
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add .
           git commit -m 'Generate language files'
-          git push origin feature-language-actions
+          git push origin master

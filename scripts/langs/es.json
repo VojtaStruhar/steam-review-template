@@ -11,6 +11,8 @@
         "visit_it": "revisalo en Github",
         "generate": "Generar reseña de Steam!",
         "copy": "Copiar el resultado",
+        "fs_code": "es",
+        "fs_flag": "🇪🇸",
         "__generator": "generator_only"
     },
     "categories": [

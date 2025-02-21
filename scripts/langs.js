@@ -67,6 +67,15 @@ async function generateJsTemplate(){
   await fsp.writeFile(path.resolve('scripts/output/review_templates/general.js'), result);
 }
 
+async function flagSelectorTemplate(){
+  const flagSelectorTemplate = await fsp.readFile(path.resolve('scripts/template/components/FlagSelect.astro.hbs'), 'utf-8');
+    const template = Handlebars.compile(flagSelectorTemplate);
+  const result = template({ langs });
+
+  await fsp.mkdir(path.resolve('scripts/output/components'), { recursive: true });
+  await fsp.writeFile(path.resolve('scripts/output/components/FlagSelect.astro'), result);
+}
+
 async function moveOutputFiles(){
   const files = await fsp.readdir(path.resolve('scripts/output'));
 
@@ -88,6 +97,7 @@ async function moveOutputFiles(){
 
 (async () => {
   await readAllLangs();
+  await flagSelectorTemplate();
   for (const langKey in langs) {
     await templateEdit(langKey);
     await generateReviewTemplate(langKey);

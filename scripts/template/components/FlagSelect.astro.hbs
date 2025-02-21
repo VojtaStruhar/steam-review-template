@@ -1,7 +1,7 @@
 ---
 let lang = Astro.currentLocale;
 let descriptions = [
-    {{log this}}
+    {{#each langs}}
     { code: "{{ @key }}", flag: "{{this.static.fs_flag}}" },
     {{/each}}
 ];

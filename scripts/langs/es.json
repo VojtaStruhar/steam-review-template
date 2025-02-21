@@ -1,0 +1,176 @@
+{
+    "name": "Plantilla",
+    "author": "Autor",
+    "static": {
+        "page_title": "Plantilla de reseñas de steam",
+        "title":"Plantilla para reseñas",
+        "awesome": "Asombroso",
+        "intro": "Esta pequeña herramienta simplifica la creación de reseñas de Steam de copiar y pegar (si estás en este sitio web, esto es lo que estás buscando). Las encuentro moderadamente graciosas, así que hice este sitio web para evitar copiar y pegar tanto.&nbsp;😆",
+        "note": "El resultado genera una línea en la parte inferior que me da crédito. Dejarla ahí es opcional, ¡pero altamente apreciado! ¡Gracias!",
+        "open_source": "Es de código abierto!",
+        "visit_it": "revisalo en Github",
+        "generate": "Generar reseña de Steam!",
+        "copy": "Copiar el resultado",
+        "__generator": "generator_only"
+    },
+    "categories": [
+        {
+            "title": "Gráficos",
+            "type": "radio",
+            "options": [
+                "Olvidas lo que es la realidad",
+                "Hermoso",
+                "Bueno",
+                "Decente",
+                "Malo",
+                "No lo mires por mucho tiempo",
+                "Se ve mejor el PONG"
+            ]
+        },
+        {
+            "title": "Jugabilidad",
+            "type": "radio",
+            "options": [
+                "Excelente",
+                "Muy buena",
+                "Buena",
+                "Mehh",
+                "Ve como seca la pintura",
+                "Ni lo toques"
+            ]
+        },
+        {
+            "title": "Audio",
+            "type": "radio",
+            "options": [
+                "Orgasmo auditivo",
+                "Muy bueno",
+                "Bueno",
+                "No tan mal",
+                "Malo",
+                "Ahora estoy sordo"
+            ]
+        },
+        {
+            "title": "Audiencia",
+            "type": "check",
+            "options": [
+                "Niños",
+                "Adolescentes",
+                "Adultos",
+                "Ancianos"
+            ]
+        },
+        {
+            "title": "Requerimientos PC",
+            "type": "radio",
+            "options": [
+                "Con que corras paint",
+                "Patata",
+                "Decente",
+                "Rapida",
+                "Niño rico",
+                "Pide prestada una pc a la NASA"
+            ]
+        },
+        {
+            "title": "Tamaño del juego",
+            "type": "radio",
+            "options": [
+              "Floppy Disk",
+              "CD/DVD",
+              "Decente",
+              "Grande",
+              "Va a consumir 10% de 1TB",
+              "Necesitarás un disco duro entero",
+              "Compra un hoyo negro"
+            ]
+          },          
+        {
+            "title": "Dificultad",
+            "type": "radio",
+            "options": [
+                "Solo es presionar 'w' ",
+                "Fácil",
+                "Fácil de aprender/difícil de dominar",
+                "Usarás el cerebro",
+                "Difícil",
+                "Modo latinoamerica"
+            ]
+        },
+        {
+            "title": "Grind",
+            "type": "radio",
+            "options": [
+                "Nada de grindeo",
+                "Solo si te importan las clasificaciones/ranks",
+                "No es necesario para progresar",
+                "Necesitas grindear",
+                "Demasiado grindeo",
+                "No volverás a ver el exterior"
+            ]
+        },
+        {
+            "title": "Historia",
+            "type": "radio",
+            "options": [
+                "Nada de historia",
+                "Algo de historia",
+                "Historia promedio",
+                "Buena historia",
+                "Hermoso",
+                "Digna de la literatura"
+            ]
+        },
+        {
+            "title": "Duración del juego",
+            "type": "radio",
+            "options": [
+                "Lo suficiente hasta terminar tu café",
+                "Corto",
+                "Promedio",
+                "Largo",
+                "No tiene fin"
+            ]
+        },
+        {
+            "title": "Precio",
+            "type": "radio",
+            "options": [
+                "Gratis!",
+                "Vale el precio",
+                "Solo si está en oferta",
+                "Si te sobra dinero",
+                "Nada recomendado",
+                "Mejor quema tu dinero"
+            ]
+        },
+        {
+            "title": "Errores",
+            "type": "radio",
+            "options": [
+                "Nunca los he visto",
+                "Un poco de errores",
+                "Pueden ser molestos",
+                "Bugisoft",
+                "El juego en si es un error"
+            ]
+        },
+        {
+            "title": "? / 10",
+            "type": "radio",
+            "options": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,176 @@
+{
+    "name": "Template",
+    "author": "Author",
+    "static": {
+        "page_title": "Modèle de review Steam",
+        "title":"Modèle de review",
+        "awesome": "Magnifique",
+        "intro": "Cet outil simplifie la création de reviews copy-pasta pour Steam (et si vous êtes sur ce site, c'est <em>parce que</em> c'est ce que vous voulez). Je les trouves assez drôles, donc j'ai crée ce site pour me simplifier la vie.&nbsp;😆",
+        "note": "Le résultat final inclus un lien vers ce site, le garder est optionel, mais apprecié. Merci beaucoup!",
+        "open_source": "Le code source est disponible sur",
+        "visit_it": "GitHub",
+        "generate": "Générer le review!",
+        "copy": "Copier",
+        "__generator": "generator_only"
+    },
+    "categories": [
+        {
+            "title": "Graphismes",
+            "type": "radio",
+            "options": [
+                "Beaux à en chialer (Quand tout est en Ultra)",
+                "Très bons",
+                "Bons",
+                "Corrects",
+                "Mauvais",
+                "Très mauvais",
+                "À vomir par terre"
+            ]
+        },
+        {
+            "title": "Gameplay",
+            "type": "radio",
+            "options": [
+                "Très bon",
+                "Bon",
+                "Moyen",
+                "Bof",
+                "Mauvais",
+                "Passez votre chemain"
+            ]
+        },
+        {
+            "title": "Audio",
+            "type": "radio",
+            "options": [
+                "Incroyable",
+                "Très bon",
+                "Très plaisant",
+                "C'est potable",
+                "Bof",
+                "Inécoutable"
+            ]
+        },
+        {
+            "title": "Audience",
+            "type": "check",
+            "options": [
+                "Je ne conseillerais pas ce jeu à mon pire ennemi",
+                "Les enfants",
+                "Les ados",
+                "Les adultes",
+                "Ma grand-mère"
+            ]
+        },
+        {
+            "title": "Configuration recommandée",
+            "type": "radio",
+            "options": [
+                "L'ordinateur de ma grand-mère",
+                "Entrée de gamme",
+                "Milieu de gamme",
+                "Haut de gamme",
+                "Très haut de gamme",
+                "Le PC de la NASA"
+            ]
+        },
+        {
+            "title": "Taille du jeu",
+            "type": "radio",
+            "options": [
+              "Disquette",
+              "Old school",
+              "Correct",
+              "Gros",
+              "Prend 10% de mon disque de 1TO",
+              "Il faut acheter un disque dur entier pour ce jeu",
+              "Il faut investir dans un trou noir entier"
+            ]
+          },          
+        {
+            "title": "Prise en main",
+            "type": "radio",
+            "options": [
+                "Inné",
+                "Facile",
+                "Nécéssite quelques heures",
+                "Difficile",
+                "Nécéssite un nouveau cerveau"
+            ]
+        },
+        {
+            "title": "Farming",
+            "type": "radio",
+            "options": [
+                "Rien à farmer",
+                "Seulement si vous voulez avancer dans les rangs",
+                "Pas nécéssaire pour progresser",
+                "Comme d'habitude",
+                "Nécéssite beaucoup de temps",
+                "Il faudrait une vie entière"
+            ]
+        },
+        {
+            "title": "Histoire",
+            "type": "radio",
+            "options": [
+                "Pas d'histoire",
+                "Lore léger",
+                "Moyen",
+                "Bon",
+                "Très bon",
+                "Très bon à en remplacer votre vie"
+            ]
+        },
+        {
+            "title": "Durée de vie",
+            "type": "radio",
+            "options": [
+                "Moins longue qu'une tasse de cafée",
+                "Brève",
+                "Moyenne",
+                "Longue",
+                "Infinie (et au-delà)"
+            ]
+        },
+        {
+            "title": "Prix",
+            "type": "radio",
+            "options": [
+                "Gratuit!",
+                "Il faudrait me payer pour y jouer",
+                "Attendez une promo",
+                "Abordable",
+                "Pas cher",
+                "À ce prix là, c'est cadeau"
+            ]
+        },
+        {
+            "title": "Bugs",
+            "type": "radio",
+            "options": [
+                "Bu- quoi?",
+                "Quelques bugs",
+                "Les bugs ne gènent pas le gameplay mais sont présents",
+                "Les bugs gènent le gameplay",
+                "Le jeu est une sorte de gros bug en phase terminal"
+            ]
+        },
+        {
+            "title": "? / 10",
+            "type": "radio",
+            "options": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10"
+            ]
+        }
+    ]
+}

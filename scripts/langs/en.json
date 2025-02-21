@@ -1,0 +1,176 @@
+{
+    "name": "Template",
+    "author": "Author",
+    "static": {
+        "page_title": "Steam Review Template",
+        "title":"Review Template",
+        "awesome": "Awesome",
+        "intro": "This little tool simplifies the creation of copy-pasta Steam reviews (if you are on this website, this <em>is</em> what you are looking for). I find them moderately funny, so I made this website to avoid copy-pasting the copy pasta so much.&nbsp;😆",
+        "note": "The result generates with a line at the bottom that gives me credit. Leaving it there is optional, but highly appreciated! Thanks!",
+        "open_source": "The code is open source",
+        "visit_it": "check it out on Github",
+        "generate": "Generate Steam Review!",
+        "copy": "Copy output",
+        "__generator": "generator_only"
+    },
+    "categories": [
+        {
+            "title": "Graphics",
+            "type": "radio",
+            "options": [
+                "You forget what reality is",
+                "Beautiful",
+                "Good",
+                "Decent",
+                "Bad",
+                "Don‘t look too long at it",
+                "MS-DOS"
+            ]
+        },
+        {
+            "title": "Gameplay",
+            "type": "radio",
+            "options": [
+                "Very good",
+                "Good",
+                "It's just gameplay",
+                "Mehh",
+                "Watch paint dry instead",
+                "Just don't"
+            ]
+        },
+        {
+            "title": "Audio",
+            "type": "radio",
+            "options": [
+                "Eargasm",
+                "Very good",
+                "Good",
+                "Not too bad",
+                "Bad",
+                "I'm now deaf"
+            ]
+        },
+        {
+            "title": "Audience",
+            "type": "check",
+            "options": [
+                "Kids",
+                "Teens",
+                "Adults",
+                "Grandma"
+            ]
+        },
+        {
+            "title": "PC Requirements",
+            "type": "radio",
+            "options": [
+                "Check if you can run paint",
+                "Potato",
+                "Decent",
+                "Fast",
+                "Rich boi",
+                "Ask NASA if they have a spare computer"
+            ]
+        },
+        {
+            "title": "Game Size",
+            "type": "radio",
+            "options": [
+              "Floppy Disk",
+              "Old Fashioned",
+              "Workable",
+              "Big",
+              "Will eat 10% of your 1TB hard drive",
+              "You will want an entire hard drive to hold it",
+              "You will need to invest in a black hole to hold all the data"
+            ]
+          },          
+        {
+            "title": "Difficulty",
+            "type": "radio",
+            "options": [
+                "Just press 'W'",
+                "Easy",
+                "Easy to learn / Hard to master",
+                "Significant brain usage",
+                "Difficult",
+                "Dark Souls"
+            ]
+        },
+        {
+            "title": "Grind",
+            "type": "radio",
+            "options": [
+                "Nothing to grind",
+                "Only if u care about leaderboards/ranks",
+                "Isn't necessary to progress",
+                "Average grind level",
+                "Too much grind",
+                "You'll need a second life for grinding"
+            ]
+        },
+        {
+            "title": "Story",
+            "type": "radio",
+            "options": [
+                "No Story",
+                "Some lore",
+                "Average",
+                "Good",
+                "Lovely",
+                "It'll replace your life"
+            ]
+        },
+        {
+            "title": "Game Time",
+            "type": "radio",
+            "options": [
+                "Long enough for a cup of coffee",
+                "Short",
+                "Average",
+                "Long",
+                "To infinity and beyond"
+            ]
+        },
+        {
+            "title": "Price",
+            "type": "radio",
+            "options": [
+                "It's free!",
+                "Worth the price",
+                "If it's on sale",
+                "If u have some spare money left",
+                "Not recommended",
+                "You could also just burn your money"
+            ]
+        },
+        {
+            "title": "Bugs",
+            "type": "radio",
+            "options": [
+                "Never heard of",
+                "Minor bugs",
+                "Can get annoying",
+                "ARK: Survival Evolved",
+                "The game itself is a big terrarium for bugs"
+            ]
+        },
+        {
+            "title": "? / 10",
+            "type": "radio",
+            "options": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10"
+            ]
+        }
+    ]
+}

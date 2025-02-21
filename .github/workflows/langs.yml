@@ -1,0 +1,36 @@
+# 
+# Script to generate files for different languages
+# 
+name: Generate languages
+
+on:
+  push:
+    branches:
+      - feature-language-actions
+    
+
+jobs:
+  install_node:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Generate files
+        run: npm run langs:generate
+    
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add .
+          git commit -m 'Generate language files'
+          git push origin master

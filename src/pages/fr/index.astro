@@ -1,0 +1,60 @@
+---
+import config_json from "../../review_templates/template_fr.json";
+import PageLayout from "../../layouts/PageLayout.astro";
+import OptionForm from "../../components/OptionForm.astro";
+import FlagSelect from "../../components/FlagSelect.astro";
+---
+
+<PageLayout title="Modèle de review Steam">
+  <header class="bg-slate-700 text-white py-2 flex flex-col items-center">
+    <h1>{"---{ Modèle de review }---"}</h1>
+    <FlagSelect />
+    <p class="mt-0">☑ Magnifique</p>
+  </header>
+
+  <div class="max-w-screen-sm mx-auto px-4">
+    <p>Cet outil simplifie la création de reviews copy-pasta pour Steam (et si vous êtes sur ce site, c&#x27;est &lt;em&gt;parce que&lt;/em&gt; c&#x27;est ce que vous voulez). Je les trouves assez drôles, donc j&#x27;ai crée ce site pour me simplifier la vie.&amp;nbsp;😆</p>
+    <p>
+      Le code source est disponible sur &rarr; <a
+        href="https://github.com/VojtaStruhar/steam-review-template"
+      >
+        GitHub</a
+      >!
+    </p>
+    <p>Le résultat final inclus un lien vers ce site, le garder est optionel, mais apprecié. Merci beaucoup!</p>
+    {
+      config_json.categories.map((category) => (
+        <OptionForm category={category} />
+      ))
+    }
+    <div class="flex justify-center">
+      <button
+        id="output-button"
+        class="py-4 px-8 text-lg font-bold rounded-lg border-none shadow bg-amber-400 hover:cursor-pointer hover:shadow-lg transition-all"
+      >
+        Générer le review!</button
+      >
+    </div>
+
+    <div class="flex justify-center mt-4">
+      <button
+        id="copy-output"
+        class="py-2 px-4 text-lg rounded-lg border-none shadow bg-sky-100 hover:cursor-pointer hover:shadow-lg transition-all"
+      >
+        Copier</button
+      >
+    </div>
+  </div>
+</PageLayout>
+
+<style>
+  input[type="radio"],
+  input[type="checkbox"] {
+    transform: scale(1.25);
+  }
+
+  fieldset,
+  legend {
+    border: 1px solid #ccc;
+  }
+</style>

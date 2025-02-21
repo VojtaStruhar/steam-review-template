@@ -1,0 +1,26 @@
+---
+let lang = Astro.currentLocale;
+let descriptions = [
+    { code: "en", flag: "🇬🇧" },
+    { code: "es", flag: "🇪🇸" },
+    { code: "fr", flag: "🇫🇷" },
+    { code: "it", flag: "🇮🇹" },
+];
+---
+
+<div class="flex gap-4 text-3xl mb-4">
+    {
+        descriptions.map((data) => (
+            <a
+                href={"/steam-review-template/" + data.code}
+                class:list={[
+                    data.code == lang && "outline",
+                    "rounded no-underline text-white",
+                    "hover:bg-white hover:bg-opacity-20",
+                ]}
+            >
+                {data.flag}
+            </a>
+        ))
+    }
+</div>

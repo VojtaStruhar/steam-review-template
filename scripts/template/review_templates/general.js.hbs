@@ -1,0 +1,9 @@
+{{#each langsKeys}}
+import {{this}} from './template_{{this}}.json';
+{{/each}}
+
+export default {
+  {{#each langsKeys}}
+    {{this}},
+  {{/each}}
+}

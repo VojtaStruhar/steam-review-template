@@ -36,6 +36,7 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.1.1"
+    "gh-pages": "^6.1.1",
+    "handlebars": "^4.7.8"
   }
 }

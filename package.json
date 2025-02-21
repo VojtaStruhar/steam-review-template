@@ -15,7 +15,8 @@
     "preview": "astro preview",
     "predeploy": "pnpm run build",
     "deploy": "gh-pages -d dist",
-    "astro": "astro"
+    "astro": "astro",
+    "langs:generate": "node scripts/langs.js"
   },
   "eslintConfig": {
     "extends": [

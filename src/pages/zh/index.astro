@@ -1,0 +1,68 @@
+---
+import config_json from "../../review_templates/template_zh.json";
+import PageLayout from "../../layouts/PageLayout.astro";
+import OptionForm from "../../components/OptionForm.astro";
+import FlagSelect from "../../components/FlagSelect.astro";
+---
+
+<PageLayout title="Steam评测模板">
+  <header class="bg-slate-700 text-white py-2 flex flex-col items-center">
+    <h1>{"---{ 评测模板 }---"}</h1>
+    <FlagSelect />
+    <p class="mt-0">☑ Awesome</p>
+  </header>
+
+  <div class="max-w-screen-sm mx-auto px-4">
+    <p>
+      This little tool simplifies the creation of copy-pasta Steam reviews (if
+      you are on this website, this <em>is</em> what you are looking for). I find
+      them moderately funny, so I made this website to avoid copy-pasting the copy
+      pasta so much.&nbsp;😆
+    </p>
+    <p>
+      代码开源 &rarr; <a
+        href="https://github.com/VojtaStruhar/steam-review-template"
+      >
+        在Github上查看</a
+      >!
+    </p>
+    <p>
+      The result generates with a line at the bottom that gives me credit.
+      Leaving it there is optional, but highly appreciated! Thanks!
+    </p>
+    {
+      config_json.categories.map((category) => (
+        <OptionForm category={category} />
+      ))
+    }
+    <div class="flex justify-center">
+      <button
+        id="output-button"
+        class="py-4 px-8 text-lg font-bold rounded-lg border-none shadow bg-amber-400 hover:cursor-pointer hover:shadow-lg transition-all"
+      >
+        生产Steam评测！</button
+      >
+    </div>
+
+    <div class="flex justify-center mt-4">
+      <button
+        id="copy-output"
+        class="py-2 px-4 text-lg rounded-lg border-none shadow bg-sky-100 hover:cursor-pointer hover:shadow-lg transition-all"
+      >
+        Copy output</button
+      >
+    </div>
+  </div>
+</PageLayout>
+
+<style>
+  input[type="radio"],
+  input[type="checkbox"] {
+    transform: scale(1.25);
+  }
+
+  fieldset,
+  legend {
+    border: 1px solid #ccc;
+  }
+</style>

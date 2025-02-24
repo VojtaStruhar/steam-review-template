@@ -36,7 +36,17 @@ const { category, index } = Astro.props;
 </form>
 
 <style>
-fieldset[data-hidden="true"] *:not(legend):not(button[data-action="hide"]) {
-  display: none;
-}
+  fieldset[data-hidden="true"] *:not(legend):not(button[data-action="hide"]) {
+    display: none;
+  }
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    transform: scale(1.25);
+  }
+
+  fieldset,
+  legend {
+    border: 1px solid #ccc;
+  }
 </style>

@@ -1,27 +1,42 @@
 ---
-let lang = Astro.currentLocale;
+import { Image } from "astro:assets";
+
+import flag_EN from "./flags/flag-english.png";
+import flag_ES from "./flags/flag-spanish.png";
+import flag_FR from "./flags/flag-french.png";
+import flag_IT from "./flags/flag-italian.png";
+import flag_DE from "./flags/flag-german.png";
+
+let current = Astro.currentLocale;
+
 let descriptions = [
-    { code: "en", flag: "🇬🇧" },
-    { code: "es", flag: "🇪🇸" },
-    { code: "fr", flag: "🇫🇷" },
-    { code: "it", flag: "🇮🇹" },
-    { code: "de", flag: "🇩🇪" },
+    { code: "en", flag: flag_EN },
+    { code: "es", flag: flag_ES },
+    { code: "fr", flag: flag_FR },
+    { code: "it", flag: flag_IT },
+    { code: "de", flag: flag_DE },
 ];
 ---
 
 <div class="flex gap-4 text-3xl mb-4">
-  {
-    descriptions.map((data) => (
-      <a
-        href={"/steam-review-template/" + data.code}
-        class:list={[
-          data.code == lang && "outline",
-          "rounded no-underline text-white",
-          "hover:bg-white hover:bg-opacity-20",
-        ]}
-      >
-        {data.flag}
-      </a>
-    ))
-  }
+    {
+        descriptions.map((data) => (
+            <a
+                href={"/steam-review-template/" + data.code}
+                class:list={[
+                    data.code == current && "outline",
+                    "rounded no-underline text-white",
+                    "hover:bg-white hover:bg-opacity-20",
+                ]}
+            >
+                <Image
+                    src={data.flag}
+                    alt={data.code + " flag"}
+                    height={40}
+                    width={40}
+                    class={"block"}
+                />
+            </a>
+        ))
+    }
 </div>

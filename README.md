@@ -29,7 +29,7 @@ It's heartwarming to see contributors adding their own languages! To make it a l
 1. Add your language code to the `i18n.locales` array in Astro config (`astro.config.mjs`).
 2. Add new template translation to in `src/review_templates` and export it in `src/review_templates/general.js`.
 3. Add new `index.astro` translation to a folder with your language code.
-4. Add your flag PNG to `src/components/flags`
+4. Add your flag PNG to `src/components/flags`. I take the flag images from [here](https://www.figma.com/community/file/1414881934178336531).
 5. Use the new flag image with the correct country code in `FlagSelect.astro` component.
 
 You are officially awesome! ✅

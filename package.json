@@ -36,6 +36,8 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.1.1"
+    "gh-pages": "^6.1.1",
+    "prettier": "^3.5.2",
+    "prettier-plugin-astro": "^0.14.1"
   }
 }

@@ -1,22 +1,63 @@
 ---
-const { category } = Astro.props;
+const { category, index } = Astro.props;
 ---
 
 <form class="flex flex-col gap-2">
-  <fieldset class="rounded-lg my-4 shadow-md border bg-sky-100">
-    <legend class="font-mono font-bold text-xl bg-emerald-300 px-4 rounded-lg shadow">
+  <fieldset
+    id={`field-${index}`}
+    data-field-index={index}
+    data-hidden="false"
+    class="rounded-lg my-4 shadow-md border bg-sky-100"
+  >
+    <legend
+      id={`legend-${index}`}
+      data-legend-index={index}
+      class="font-mono font-bold text-xl bg-emerald-300 px-4 rounded-lg shadow"
+    >
       {category.title}
     </legend>
-    {category.options.map((item) => (
-      <div> <!-- Wrapped inside a div to fix JSX fragment issue -->
-        <input 
-          type={category.type === "radio" ? "radio" : "checkbox"} 
-          id={item} 
-          name={category.title} 
-          value={item} 
-        />
-        <label class="mx-2" for={item}>{item}</label>
-      </div>
-    ))}
+    {
+      category.options.map((item) => (
+        <>
+          {category.type == "radio" ? (
+            <input type="radio" id={item} name={category.title} value={item} />
+          ) : (
+            <input
+              type="checkbox"
+              id={item}
+              name={category.title}
+              value={item}
+            />
+          )}
+          <label class="mx-2" for={item}>
+            {item}
+          </label>
+          <br />
+        </>
+      ))
+    }
+    <button
+      id={`hide-toggle-${index}`}
+      data-category={index}
+      data-action="hide"
+      class="text-white font-semibold rounded border-none px-2 py-1 mt-2 bg-red-400 cursor-pointer"
+      type="button">Hide</button
+    >
   </fieldset>
 </form>
+
+<style>
+  fieldset[data-hidden="true"] *:not(legend):not(button[data-action="hide"]) {
+    display: none;
+  }
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    transform: scale(1.25);
+  }
+
+  fieldset,
+  legend {
+    border: 1px solid #ccc;
+  }
+</style>

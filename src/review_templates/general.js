@@ -10,5 +10,6 @@ export default {
   es: spanish_template,
   fr: french_template,
   it: italian_template,
-  de: german_template
+  de: german_template,
+  pl: polish_template
 }

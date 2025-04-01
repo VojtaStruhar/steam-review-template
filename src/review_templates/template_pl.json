@@ -1,0 +1,164 @@
+{
+    "name": "Template",
+    "author": "Author",
+    "categories": [
+        {
+            "title": "Grafika",
+            "type": "radio",
+            "options": [
+                "Zapomnisz czym jest rzeczywistość",
+                "Piękna",
+                "Dobra",
+                "Średnia",
+                "Słaba",
+                "Nie patrz na nią zbyt długo",
+                "MS-DOS"
+            ]
+        },
+        {
+            "title": "Rozgrywka",
+            "type": "radio",
+            "options": [
+                "Bardzo dobra",
+                "Dobra",
+                "To tylko rozgrywka",
+                "Mehh",
+                "Lepiej poobserwować schnącą farbę",
+                "Nie graj w to"
+            ]
+        },
+        {
+            "title": "Audio",
+            "type": "radio",
+            "options": [
+                "Eargasm",
+                "Bardzo dobra",
+                "Dobra",
+                "Nie najgorsza",
+                "Zła",
+                "Jestem teraz głuchy"
+            ]
+        },
+        {
+            "title": "Dla kogo",
+            "type": "check",
+            "options": [
+                "Dzieci",
+                "Nastolatki",
+                "Dorośli",
+                "Babcia"
+            ]
+        },
+        {
+            "title": "Wymagania sprzętowe",
+            "type": "radio",
+            "options": [
+                "Sprawdź czy moesz włączyć painta",
+                "Ziemniak",
+                "Średni",
+                "Szybki",
+                "Bogacz",
+                "Zapytaj NASA czy nie mają dodatkowego komputera"
+            ]
+        },
+        {
+            "title": "Rozmiar gry",
+            "type": "radio",
+            "options": [
+              "Dyskietka",
+              "Retro",
+              "Średniak",
+              "Duży",
+              "Zje 15% twojego 1TB dysku",
+              "Zje cały twój dysk",
+              "Musisz zainwestować w czarną dziurę, aby zainstalować tę grę"
+            ]
+          },          
+        {
+            "title": "Trudność",
+            "type": "radio",
+            "options": [
+                "Poprostu naciśnij 'W'",
+                "Łatwa",
+                "Łatwa do nauki / trudna do opanowania",
+                "Due uucie mózgu",
+                "Trudna",
+                "Dark Souls"
+            ]
+        },
+        {
+            "title": "Poziom grindowania",
+            "type": "radio",
+            "options": [
+                "Nic do grindowania",
+                "Tylko jeśli obchodzą cię rankingi",
+                "Zbędne do progresowania",
+                "Średni poziom grindowania",
+                "Za dużo grindowania",
+                "Potrzebujesz drugiego życia, aby grindować"
+            ]
+        },
+        {
+            "title": "Historia",
+            "type": "radio",
+            "options": [
+                "Brak",
+                "Jakiś lore",
+                "Średnia",
+                "Dobra",
+                "Super",
+                "Zastąpi twoje życie"
+            ]
+        },
+        {
+            "title": "Czas gry",
+            "type": "radio",
+            "options": [
+                "Wystarczy na kubek kawy",
+                "Krótki",
+                "Średni",
+                "Długi",
+                "Do końca świata i jeszcze dłużej"
+            ]
+        },
+        {
+            "title": "Cena",
+            "type": "radio",
+            "options": [
+                "Darmowa!",
+                "Warta swojej ceny",
+                "Jeśli jest na promocji",
+                "Jeśli masz trochę wolnych pieniędzy",
+                "Nie warta",
+                "Lepiej poprostu spal swoje pieniądze"
+            ]
+        },
+        {
+            "title": "Błędy",
+            "type": "radio",
+            "options": [
+                "Nigdy o nich nie słyszałem",
+                "Drobne błędy",
+                "Bywają irytujące",
+                "ARK: Survival Evolved",
+                "Nie graj w to, jeśli nie chcesz być beta testerem"
+            ]
+        },
+        {
+            "title": "? / 10",
+            "type": "radio",
+            "options": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10"
+            ]
+        }
+    ]
+}

@@ -33,3 +33,7 @@ It's heartwarming to see contributors adding their own languages! To make it a l
 5. Use the new flag image with the correct country code in `FlagSelect.astro` component.
 
 You are officially awesome! ✅
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=VojtaStruhar/steam-review-template&type=Date)](https://www.star-history.com/#VojtaStruhar/steam-review-template&Date)

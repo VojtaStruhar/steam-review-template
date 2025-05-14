@@ -31,8 +31,8 @@ import FlagSelect from "../../components/FlagSelect.astro";
       Lasciarla è opzionale, ma molto apprezzato! Grazie!
     </p>
     {
-      config_json.categories.map((category) => (
-        <OptionForm category={category} />
+      config_json.categories.map((category, index) => (
+        <OptionForm category={category} index={index}/>
       ))
     }
     <div class="flex justify-center">

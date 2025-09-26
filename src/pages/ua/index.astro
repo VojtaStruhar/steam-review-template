@@ -1,0 +1,52 @@
+---
+import config_json from "../../review_templates/template_en.json";
+import PageLayout from "../../layouts/PageLayout.astro";
+import OptionForm from "../../components/OptionForm.astro";
+import FlagSelect from "../../components/FlagSelect.astro";
+---
+
+<PageLayout title="Steam Review Template">
+  <header class="bg-slate-700 text-white py-2 flex flex-col items-center">
+    <h1>{"---{ Review Template }---"}</h1>
+    <FlagSelect />
+    <p class="mt-0">☑ Awesome</p>
+  </header>
+
+  <div class="max-w-screen-sm mx-auto px-4">
+    <p>
+	Цей невеликий інструмент спрощує створення копіпаста Steam-оглядів (якщо ти на цьому 		сайті, то саме це <em>і є</em> тим, що ти шукаєш). Мені вони здаються помірно кумедними, 	тож я зробив цей сайт, щоб уникати постійного копіювання та вставляння копіпасти.&nbsp;😆
+    </p>
+    <p>
+      Код є відкритим &rarr; <a
+        href="https://github.com/VojtaStruhar/steam-review-template"
+      >
+        Подивіться на GitHub</a
+      >!
+    </p>
+    <p>
+      Результат генерується з рядком унизу, який вказує мої заслуги. Залишати його необов’язково, але дуже цінується! Дякую!
+    </p>
+    {
+      config_json.categories.map((category, index) => (
+        <OptionForm category={category} index={index} />
+      ))
+    }
+    <div class="flex justify-center">
+      <button
+        id="output-button"
+        class="py-4 px-8 text-lg font-bold rounded-lg border-none shadow bg-amber-400 hover:cursor-pointer hover:shadow-lg transition-all"
+      >
+        Згенерувати огляд Steam!</button
+      >
+    </div>
+
+    <div class="flex justify-center mt-4">
+      <button
+        id="copy-output"
+        class="py-2 px-4 text-lg rounded-lg border-none shadow bg-sky-100 hover:cursor-pointer hover:shadow-lg transition-all"
+      >
+        Скопіювати результат</button
+      >
+    </div>
+  </div>
+</PageLayout>

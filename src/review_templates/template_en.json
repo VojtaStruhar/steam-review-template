@@ -122,16 +122,6 @@
             ]
         },
         {
-            "title": "Moddability",
-            "type": "radio",
-            "options": [
-                "Minecraft",
-                "Enough to not feel bored",
-                "Cosmetic changes only",
-                "Nope"
-            ]
-        },
-        {
             "title": "Price",
             "type": "radio",
             "options": [

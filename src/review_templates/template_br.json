@@ -34,7 +34,7 @@
                 "Ouvigasmo",
                 "Muito Bom",
                 "Bom",
-                "Não é tão ruim..",
+                "Não é tão ruim...",
                 "Ruim",
                 "Me deixou mouco"
             ]
@@ -46,19 +46,19 @@
                 "Crianças",
                 "Adolescentes",
                 "Adultos",
-                "Véios"
+                "Vovózinhas"
             ]
         },
         {
             "title": "Requisitos do PC",
             "type": "radio",
             "options": [
-                "Vê ai se tu roda o Paint",
+                "Vê aí se tu roda o Paint",
                 "Batata",
                 "Decente",
                 "Máquina",
                 "Tio Patinhas",
-                "Pergunta pra NASA se eles tem um pc sobrando"
+                "Pergunta pra NASA se eles têm um pc sobrando"
             ]
         },
         {
@@ -80,9 +80,9 @@
             "options": [
                 "Só pressiona 'W'",
                 "Fácil",
-                "Fácil de aprender / difícil de masterizar",
+                "Fácil de aprender / difícil de dominar",
                 "Uso cerebral considerável",
-                "Dificil",
+                "Difícil",
                 "Dark Souls"
             ]
         },
@@ -93,8 +93,8 @@
                 "Nada pra grindar",
                 "Só se tu ligar pra ranking/classificação",
                 "Não é necessário pra progredir",
-                "Mediano",
-                "MUITO",
+                "Grind mediano",
+                "Grind demais",
                 "Vai precisar de outra vida só pra isso"
             ]
         },

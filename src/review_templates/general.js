@@ -4,7 +4,7 @@ import spanish_template from "./template_es.json"
 import italian_template from "./template_it.json"
 import german_template from "./template_de.json"
 import polish_template from "./template_pl.json"
-import portuguese_template from "./template_pt.json"
+import brazilian_portuguese_template from "./template_br.json";
 
 export default {
   en: english_template,
@@ -13,5 +13,5 @@ export default {
   it: italian_template,
   de: german_template,
   pl: polish_template,
-  pt: portuguese_template
+  br: brazilian_portuguese_template
 }

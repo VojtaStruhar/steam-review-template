@@ -73,7 +73,17 @@
               "You will want an entire hard drive to hold it",
               "You will need to invest in a black hole to hold all the data"
             ]
-          },          
+        },
+        {
+            "title": "Moddability",
+            "type": "radio",
+            "options": [
+                "Minecraft",
+                "Enough to feel different",
+                "Cosmetic changes only",
+                "Nope"
+            ]
+        },
         {
             "title": "Difficulty",
             "type": "radio",

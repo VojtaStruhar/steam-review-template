@@ -62,19 +62,36 @@ let config_json = templates[Astro.currentLocale] || templates.en;
         ) {
           return;
         }
-        output.innerHTML += `\n---{ ${category.title} }---\n`;
-        category.options.forEach((item) => {
-          if (
-            category.type === "check" &&
-            data[category.title].includes(item)
-          ) {
-            output.innerHTML += `☑ ${item}\n`;
-          } else if (data[category.title] === item) {
-            output.innerHTML += `☑ ${item}\n`;
+        if (category.title == "? / 10") {
+          if (data[category.title] == undefined) {
+            output.innerHTML += `\n---{ ? / 10 }---\n☆☆☆☆☆☆☆☆☆\n`;
           } else {
-            output.innerHTML += `☐ ${item}\n`;
+            output.innerHTML += `\n---{ ${data[category.title]} / 10 }---\n`;
+            let stars = Number(data[category.title])
+            for (let i = 1;i<11;i++) {
+              if (i<=stars) {
+                output.innerHTML += `★`
+              } else {
+                output.innerHTML += `☆`
+              }
+            }
+            output.innerHTML += `\n`
           }
-        });
+        } else {
+          output.innerHTML += `\n---{ ${category.title} }---\n`;
+          category.options.forEach((item) => {
+            if (
+              category.type === "check" &&
+              data[category.title].includes(item)
+            ) {
+              output.innerHTML += `☑ ${item}\n`;
+            } else if (data[category.title] === item) {
+              output.innerHTML += `☑ ${item}\n`;
+            } else {
+              output.innerHTML += `☐ ${item}\n`;
+            }
+          });
+        }
       });
 
       output.innerHTML += `\n`;

@@ -11,7 +11,7 @@
                 "Dobra",
                 "Średnia",
                 "Słaba",
-                "Nie patrz na nią zbyt długo",
+                "Nie patrz na nią zbyt długo, bo oślepniesz",
                 "MS-DOS"
             ]
         },
@@ -31,6 +31,7 @@
             "title": "Audio",
             "type": "radio",
             "options": [
+                "Clair Obscur: Expedition 33",
                 "Orgazm uszny",
                 "Bardzo dobra",
                 "Dobra",
@@ -43,10 +44,12 @@
             "title": "Dla kogo",
             "type": "check",
             "options": [
-                "Dzieci",
-                "Nastolatki",
-                "Dorośli",
-                "Dziadkowie"
+                "Plemnik",
+                "Bobas",
+                "Dziecko",
+                "Nastolatek",
+                "Dorosła osoba",
+                "Dziadek"
             ]
         },
         {
@@ -58,7 +61,8 @@
                 "Średni",
                 "Szybki",
                 "Bogacz",
-                "Zapytaj NASA czy nie mają dodatkowego komputera"
+                "Zapytaj NASA czy nie mają dodatkowego komputera",
+                "Musisz zajumać komputer kwantowy aby uruchomić tę grę"
             ]
         },
         {
@@ -69,7 +73,7 @@
               "Retro",
               "Średniak",
               "Duży",
-              "Zje 15% twojego 1TB dysku",
+              "Zje 15% twojego 2TB dysku",
               "Zje cały twój dysk",
               "Musisz zainwestować w czarną dziurę, aby zainstalować tę grę"
             ]
@@ -107,7 +111,8 @@
                 "Średnia",
                 "Dobra",
                 "Super",
-                "Zastąpi twoje życie"
+                "Zastąpi twoje życie",
+                "Clair Obscur: Expedition 33"
             ]
         },
         {
@@ -142,7 +147,7 @@
                 "Bywają irytujące",
                 "Cyberpunk na premierze",
                 "ARK: Survival Evolved",
-                "Nie graj w to, jeśli nie chcesz być beta testerem"
+                "Nie graj w to, jeśli nie chcesz być alpha testerem"
             ]
         },
         {

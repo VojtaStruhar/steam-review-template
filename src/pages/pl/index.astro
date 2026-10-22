@@ -14,10 +14,10 @@ import FlagSelect from "../../components/FlagSelect.astro";
 
   <div class="max-w-screen-sm mx-auto px-4">
     <p>
-      To małe narzędzie upraszcza tworzenie kopiuj-wklej do recenzji na Steam
+      To małe narzędzie upraszcza tworzenie zabawnych recenzji do produktów na Steam
       (jeśli jesteś na tej stronie, to <em>jest</em> właśnie to, czego szukasz).
       Uważam je za umiarkowanie zabawne, więc stworzyłem tę stronę,
-      aby nie musieć tyle kopiować i wklejać..&nbsp;😆
+      aby nie musieć tyle edytować recenzji tworzonych prez innych ludzi..&nbsp;😆
     </p>
     <p>
       Ten kod jest otwartoźródłowy &rarr; <a
@@ -27,8 +27,8 @@ import FlagSelect from "../../components/FlagSelect.astro";
       >!
     </p>
     <p>
-      Wyniki są generowane z moim napisem który mnie kredytuje.
-      Pozostawienie jej jest opcjonalne ale mile widziane! Dzięki!
+      Wyniki są generowane z napisem który mnie kredytuje.
+      Pozostawienie jej jest opcjonalne ale mile widziane! Z góry dzięki!
     </p>
     {
       config_json.categories.map((category, index) => (
@@ -40,7 +40,7 @@ import FlagSelect from "../../components/FlagSelect.astro";
         id="output-button"
         class="py-4 px-8 text-lg font-bold rounded-lg border-none shadow bg-amber-400 hover:cursor-pointer hover:shadow-lg transition-all"
       >
-        Wygeneruj recenzję!</button
+        Wygeneruj wyjebiście śmieszną recenzję!</button
       >
     </div>
 
@@ -49,7 +49,7 @@ import FlagSelect from "../../components/FlagSelect.astro";
         id="copy-output"
         class="py-2 px-4 text-lg rounded-lg border-none shadow bg-sky-100 hover:cursor-pointer hover:shadow-lg transition-all"
       >
-        kopiuj wynik</button
+        Kopiuj swoją wyjebiście śmieszną recenzję!</button
       >
     </div>
   </div>
